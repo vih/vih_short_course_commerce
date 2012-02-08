@@ -1,0 +1,118 @@
+<?php
+/**
+ * @file
+ * Code for the VIH Short Course Commerce feature.
+ */
+
+include_once('vih_short_course_commerce.features.inc');
+
+/**
+ * Implements hook_commerce_product_type_info().
+ */
+function vih_short_course_commerce_commerce_product_type_info() {
+  return array(
+    'vih_short_course' => array(
+      'type' => 'vih_short_course',
+      'name' => t('Short course'),
+      'description' => t('Defines a short course product that users can sign up for.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_commerce_line_item_type_info().
+ */
+function vih_short_course_commerce_commerce_line_item_type_info() {
+  return array(
+    'vih_short_course' => array(
+      'name' => t('Standard short course'),
+      'description' => t('Used for short courses, which no additional information.'),
+      'add_form_submit_value' => t('Sign up'),
+      'base' => 'commerce_product_line_item',
+      'product' => TRUE,
+    ),
+    'vih_short_course_golf' => array(
+      'name' => t('Golf short course'),
+      'description' => t('Used for short couses, where you can can select a golf handicap.'),
+      'add_form_submit_value' => t('Sign up'),
+      'base' => 'commerce_product_line_item',
+      'product' => TRUE,
+    ),
+    'vih_short_course_kayak' => array(
+      'name' => t('Kayak short course'),
+      'description' => t('Used for short couses, where you can rent a kayak.'),
+      'add_form_submit_value' => t('Sign up'),
+      'base' => 'commerce_product_line_item',
+      'product' => TRUE,
+    ),
+    'vih_short_course_sport' => array(
+      'name' => t('Sport short course'),
+      'description' => t('Used for short couses, where you can can select a sport activity.'),
+      'add_form_submit_value' => t('Sign up'),
+      'base' => 'commerce_product_line_item',
+      'product' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function vih_short_course_commerce_menu() {
+  $items['node/%node/signup'] = array(
+    'title callback' => 'node_page_title',
+    'title arguments' => array(1),
+    // The page callback also invokes drupal_set_title() in case
+    // the menu router's title is overridden by a menu link.
+    'page callback' => 'vih_short_course_node_page_view',
+    'page arguments' => array(1),
+    'access callback' => 'node_access',
+    'access arguments' => array('view', 1),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Add an 'Signup' view mode for nodes, similar to RSS view mode.
+ */
+function vih_short_course_commerce_entity_info_alter(&$info) {
+  $info['node']['view modes'] += array(
+    'vih_signup' => array(
+      'label' => t('Signup'),
+      'custom settings' => TRUE,
+    ),
+  );
+}
+
+
+function vih_short_course_commerce_node_page_view($node) {
+  return node_view_multiple(array($node->nid => $node), 'vih_signup');
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function vih_short_course_commerce_node_view($node, $view_mode, $langcode) {
+  if ($view_mode == 'full') {
+    $node->content['my_additional_field'] = array(
+      '#markup' => l('Signup NOW!', 'node/' . $node->nid . '/signup'),
+      '#weight' => 10,
+    );
+  }
+}
+
+/**
+ * Implements hook_commerce_price_component_type_info().
+ */
+function vih_short_course_commerce_commerce_price_component_type_info() {
+  return array(
+    'vih_kayak_fee' => array(
+      'title' => t('Kayak fee'),
+      'display_title' => t('Kayak fee'),
+      'weight' => -50,
+    ),
+  );
+}
