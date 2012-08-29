@@ -70,3 +70,10 @@ features[variable][] = node_submitted_short_course_basic
 features[variable][] = node_submitted_vih_short_course_golf
 features[variable][] = node_submitted_vih_short_course_kajak
 features[variable][] = node_submitted_vih_short_course_sport_camp
+
+
+; Information added by drush on 2012-08-29
+version = "unknown"
+project = "vih"
+datestamp = "1346221374"
+
