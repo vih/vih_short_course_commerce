@@ -56,55 +56,6 @@ function vih_short_course_commerce_commerce_line_item_type_info() {
 }
 
 /**
- * Implements hook_menu().
- */
-function vih_short_course_commerce_menu() {
-  $items['node/%node/signup'] = array(
-    'title callback' => 'node_page_title',
-    'title arguments' => array(1),
-    // The page callback also invokes drupal_set_title() in case
-    // the menu router's title is overridden by a menu link.
-    'page callback' => 'vih_short_course_node_page_view',
-    'page arguments' => array(1),
-    'access callback' => 'node_access',
-    'access arguments' => array('view', 1),
-  );
-
-  return $items;
-}
-
-/**
- * Implements hook_entity_info_alter().
- *
- * Add an 'Signup' view mode for nodes, similar to RSS view mode.
- */
-function vih_short_course_commerce_entity_info_alter(&$info) {
-  $info['node']['view modes'] += array(
-    'vih_signup' => array(
-      'label' => t('Signup'),
-      'custom settings' => TRUE,
-    ),
-  );
-}
-
-
-function vih_short_course_commerce_node_page_view($node) {
-  return node_view_multiple(array($node->nid => $node), 'vih_signup');
-}
-
-/**
- * Implements hook_node_view().
- */
-function vih_short_course_commerce_node_view($node, $view_mode, $langcode) {
-  if ($view_mode == 'full') {
-    $node->content['my_additional_field'] = array(
-      '#markup' => l('Signup NOW!', 'node/' . $node->nid . '/signup'),
-      '#weight' => 10,
-    );
-  }
-}
-
-/**
  * Implements hook_commerce_price_component_type_info().
  */
 function vih_short_course_commerce_commerce_price_component_type_info() {
@@ -115,4 +66,104 @@ function vih_short_course_commerce_commerce_price_component_type_info() {
       'weight' => -50,
     ),
   );
+}
+
+/**
+* Implements hook_admin_paths().
+*/
+function vih_short_course_commerce_admin_paths() {
+  $paths = array(
+    'node/*/registrations' => TRUE,
+    'node/*/registrations/*' => TRUE,    
+  );
+  return $paths;
+}
+
+/**
+ * Implementation of hook_form_FORMID_alter().
+ */
+function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
+
+  $form['submit']['#value'] = t('Register');
+/*
+  $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
+  $purchased_product_ids = vih_short_course_commerce_get_users_purchased_products();
+
+  $line_item = $form_state['line_item'];
+  $product = commerce_product_load($line_item->commerce_product[LANGUAGE_NONE][0]['product_id']);
+
+  // If this was a contrib module, we'd want to check if the associated registration
+  // entity is set to "Allow multiple registrations" for a user instead of just
+  // checking whether the product type is "program" as is the case for this specific site
+  if ($product->type == 'vih_short_course_golf') {
+    // Change the "Add to Cart" button text
+    $form['submit']['#value'] = t('Enroll');
+
+    if (in_array($product->product_id, $cart_product_ids)) {
+      // Product is already in cart! We only want to allow a quantity of 1,
+      // so disable the submit button and change its text accordingly
+      $form['submit']['#disabled'] = TRUE;
+      $form['submit']['#value'] = t('Already in cart');
+    }
+
+    if (in_array($product->product_id, $purchased_product_ids)) {
+      // Product has already been purchased!
+      // We only want users to register for a program once
+      $form['submit']['#disabled'] = TRUE;
+      $form['submit']['#value'] = t('Already enrolled');
+    }
+  }
+  */
+}
+
+/**
+ * Return the product_id values for all products in the cart
+ *
+ * @return
+ *  An array of product ids
+ */
+function vih_short_course_commerce_get_products_in_cart() {
+  $cart_product_ids = &drupal_static(__FUNCTION__);
+
+  if (!isset($cart_product_ids)) {
+    global $user;
+    $cart_product_ids = array();
+    $order = commerce_cart_order_load($user->uid);
+    if ($order) {
+      $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+      foreach ($order_wrapper->commerce_line_items as $delta => $line_item_wrapper) {
+        $product_wrapper = $line_item_wrapper->commerce_product;
+        $cart_product_ids[] = $product_wrapper->product_id->value();
+      }
+    }
+
+    $cart_product_ids = array_unique($cart_product_ids);
+  }
+
+  return $cart_product_ids;
+}
+
+/**
+ * Return the product_id values for all products already purchased
+ *
+ * @return
+ *  An array of product ids
+ */
+function vih_short_course_commerce_get_users_purchased_products() {
+  $purchased_product_ids = &drupal_static(__FUNCTION__);
+
+  if (!isset($purchased_product_ids)) {
+    global $user;
+    $query = db_select('commerce_order', 'corder');
+    $query->join('commerce_line_item', 'li', 'corder.order_id = li.order_id');
+    $query->join('field_data_commerce_product', 'prod', 'li.line_item_id = prod.entity_id');
+    $query->condition('corder.uid', $user->uid, '=')
+          ->condition('corder.status', 'completed', '=')
+          ->fields('prod', array('commerce_product_product_id'));
+    $result = $query->execute();
+
+    $purchased_product_ids = array_unique($result->fetchCol());
+  }
+
+  return $purchased_product_ids;
 }
