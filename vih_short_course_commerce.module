@@ -10,7 +10,6 @@ include_once('vih_short_course_commerce.features.inc');
  * Implements hook_commerce_product_type_info().
  */
 function vih_short_course_commerce_commerce_product_type_info() {
-  /*
   return array(
     'vih_short_course' => array(
       'type' => 'vih_short_course',
@@ -18,7 +17,6 @@ function vih_short_course_commerce_commerce_product_type_info() {
       'description' => t('Defines a short course product that users can sign up for.'),
     ),
   );
-  */
 }
 
 /**
