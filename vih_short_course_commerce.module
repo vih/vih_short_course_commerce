@@ -10,6 +10,7 @@ include_once('vih_short_course_commerce.features.inc');
  * Implements hook_commerce_product_type_info().
  */
 function vih_short_course_commerce_commerce_product_type_info() {
+  /*
   return array(
     'vih_short_course' => array(
       'type' => 'vih_short_course',
@@ -17,12 +18,14 @@ function vih_short_course_commerce_commerce_product_type_info() {
       'description' => t('Defines a short course product that users can sign up for.'),
     ),
   );
+  */
 }
 
 /**
  * Implements hook_commerce_line_item_type_info().
  */
 function vih_short_course_commerce_commerce_line_item_type_info() {
+  /*
   return array(
     'vih_short_course' => array(
       'name' => t('Standard short course'),
@@ -53,6 +56,7 @@ function vih_short_course_commerce_commerce_line_item_type_info() {
       'product' => TRUE,
     ),
   );
+  */
 }
 
 /**
@@ -180,7 +184,7 @@ function vih_short_course_commerce_add_to_cart_form_submit_after($form, &$form_s
   }
 
   // Redirect to the page.
-  $form_state['redirect'] = 'cart';
+  // $form_state['redirect'] = 'cart';
 }
 
 /**
@@ -209,26 +213,4 @@ function vih_short_course_commerce_get_products_in_cart() {
 
   return $cart_product_ids;
 }
-/*
-function vih_short_course_commerce_form_alter(&$form, $form_state, $form_id) {
-  drupal_set_message($form_id);
-  
-  if (strpos($form_id, 'commerce_checkout_form_registration') !== FALSE) {
-    // $form_state['order']->commerce_line_items);
 
-   print_r($form_state);
-
-    drupal_set_message(t('This is the registration form'));
-    $values[] = 'Adventure';
-    $values[] = 'Fitness';
-    $values[] = 'Boldspil';    
-    $form['selected'] = array(
-      '#type' => 'select',
-      '#title' => t('Selected'),
-      '#options' => $values,
-      '#default_value' => NULL,
-      '#description' => t('Whatever you are doing.'),
-    );
-  } 
-}
-*/
