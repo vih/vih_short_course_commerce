@@ -80,40 +80,107 @@ function vih_short_course_commerce_admin_paths() {
 }
 
 /**
+ * Finds products for the particular product display in the add to cart form
+ */
+function vih_short_course_commerce_get_product_ids($array) {
+  $ids = array();
+  foreach ($array as $a) {
+    $ids[] = $a['product_id'];
+  }
+  return $ids;
+}
+
+/**
  * Implementation of hook_form_FORMID_alter().
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
 
-  $form['submit']['#value'] = t('Register');
-/*
+  // Make sure that one product display has been registered before starting on a new product display
+  $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']->field_golf_product[LANGUAGE_NONE]);
+
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
-  $purchased_product_ids = vih_short_course_commerce_get_users_purchased_products();
+  
+  $merged_ids = array_intersect($cart_product_ids, $product_ids);
+  $is_cart_products_available = empty($merged_ids);
+  
+  if ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
+    $form['pending_order_msg'] = array(
+      '#markup' => '<div class="error">' .
+        t('You have already started registering for another course. Please finish that registration before proceding.') . 
+        l('Go to your cart', 'cart') . 
+        '.</div>',
+    );
+    $form['pending_order_msg']['#weight'] = -50;  
+    $form['submit']['#value'] = t('Cannot register - please finish your other order');
+    $form['submit']['#disabled'] = TRUE;
+  }
+  else {
+    $form['submit']['#value'] = t('Register');
+  } 
 
-  $line_item = $form_state['line_item'];
-  $product = commerce_product_load($line_item->commerce_product[LANGUAGE_NONE][0]['product_id']);
+  // Kayak courses - add possiblity to rent a kayak
+  if ($form_state['context']['entity']->type = 'vih_short_course_kajak') {
+  
+    if (!empty($form_state['context']['entity']->field_rent_kayak)) {
 
-  // If this was a contrib module, we'd want to check if the associated registration
-  // entity is set to "Allow multiple registrations" for a user instead of just
-  // checking whether the product type is "program" as is the case for this specific site
-  if ($product->type == 'vih_short_course_golf') {
-    // Change the "Add to Cart" button text
-    $form['submit']['#value'] = t('Enroll');
+      $form['rent_kayak'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Additional products'),
+        '#weight' => 20,
+      );
 
-    if (in_array($product->product_id, $cart_product_ids)) {
-      // Product is already in cart! We only want to allow a quantity of 1,
-      // so disable the submit button and change its text accordingly
-      $form['submit']['#disabled'] = TRUE;
-      $form['submit']['#value'] = t('Already in cart');
-    }
+      // Only one possible kayak product due to limitations on the content type
+      $kayak_product_id = $form_state['context']['entity']->field_rent_kayak[LANGUAGE_NONE][0]['product_id'];
+      $kayak_product = commerce_product_load($kayak_product_id);
 
-    if (in_array($product->product_id, $purchased_product_ids)) {
-      // Product has already been purchased!
-      // We only want users to register for a program once
-      $form['submit']['#disabled'] = TRUE;
-      $form['submit']['#value'] = t('Already enrolled');
+      $price = field_get_items('commerce_product', $kayak_product, 'commerce_price');
+      $price = render(field_view_value('commerce_product', $kayak_product, 'commerce_price', $price[0], 'full'));
+
+      $options = array('none' => t('Do not rent kayak'));
+      $options[$kayak_product->product_id] = $kayak_product->title . ' <span class="kayak-price">'. $price . '</span>';
+
+      $form['rent_kayak']['kayak'] = array(
+        '#type' => 'radios',
+        '#title' => t('Rent a kayak?'),
+        '#options' => $options,
+        '#default_value' => 'none',
+        '#weight' => 20,
+      );
+
+      array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
+      $form['#submit'][] = 'vih_short_course_commerce_add_to_cart_form_submit_after';
     }
   }
-  */
+}
+
+/**
+ * Submit handler: empty out the current cart.
+ */
+function vih_short_course_commerce_add_to_cart_form_submit_before($form, &$form_state) {
+  global $user;
+
+  // Get the current cart content.
+  $order = commerce_cart_order_load($user->uid);
+
+  // Empty the cart before adding any new products.
+  if (!empty($order)) {
+    // Add some logic to ensure that the cart will not be filled up with rented kayaks.
+  }
+}
+
+/**
+ * Submit handler: add the products and redirect to the checkout page.
+ */
+function vih_short_course_commerce_add_to_cart_form_submit_after($form, &$form_state) {
+  global $user;
+
+  // Add any selected training.
+  if (!empty($form_state['values']['kayak']) && is_numeric($form_state['values']['kayak']) && $form_state['values']['kayak'] != 'none') {
+    commerce_cart_product_add_by_id($form_state['values']['kayak'], $form_state['values']['quantity'], FALSE, $user->uid);
+  }
+
+  // Redirect to the page.
+  $form_state['redirect'] = 'cart';
 }
 
 /**
@@ -142,28 +209,26 @@ function vih_short_course_commerce_get_products_in_cart() {
 
   return $cart_product_ids;
 }
+/*
+function vih_short_course_commerce_form_alter(&$form, $form_state, $form_id) {
+  drupal_set_message($form_id);
+  
+  if (strpos($form_id, 'commerce_checkout_form_registration') !== FALSE) {
+    // $form_state['order']->commerce_line_items);
 
-/**
- * Return the product_id values for all products already purchased
- *
- * @return
- *  An array of product ids
- */
-function vih_short_course_commerce_get_users_purchased_products() {
-  $purchased_product_ids = &drupal_static(__FUNCTION__);
+   print_r($form_state);
 
-  if (!isset($purchased_product_ids)) {
-    global $user;
-    $query = db_select('commerce_order', 'corder');
-    $query->join('commerce_line_item', 'li', 'corder.order_id = li.order_id');
-    $query->join('field_data_commerce_product', 'prod', 'li.line_item_id = prod.entity_id');
-    $query->condition('corder.uid', $user->uid, '=')
-          ->condition('corder.status', 'completed', '=')
-          ->fields('prod', array('commerce_product_product_id'));
-    $result = $query->execute();
-
-    $purchased_product_ids = array_unique($result->fetchCol());
-  }
-
-  return $purchased_product_ids;
+    drupal_set_message(t('This is the registration form'));
+    $values[] = 'Adventure';
+    $values[] = 'Fitness';
+    $values[] = 'Boldspil';    
+    $form['selected'] = array(
+      '#type' => 'select',
+      '#title' => t('Selected'),
+      '#options' => $values,
+      '#default_value' => NULL,
+      '#description' => t('Whatever you are doing.'),
+    );
+  } 
 }
+*/
