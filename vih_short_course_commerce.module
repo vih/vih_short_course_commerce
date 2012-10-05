@@ -20,44 +20,6 @@ function vih_short_course_commerce_commerce_product_type_info() {
 }
 
 /**
- * Implements hook_commerce_line_item_type_info().
- */
-function vih_short_course_commerce_commerce_line_item_type_info() {
-  /*
-  return array(
-    'vih_short_course' => array(
-      'name' => t('Standard short course'),
-      'description' => t('Used for short courses, which no additional information.'),
-      'add_form_submit_value' => t('Sign up'),
-      'base' => 'commerce_product_line_item',
-      'product' => TRUE,
-    ),
-    'vih_short_course_golf' => array(
-      'name' => t('Golf short course'),
-      'description' => t('Used for short couses, where you can can select a golf handicap.'),
-      'add_form_submit_value' => t('Sign up'),
-      'base' => 'commerce_product_line_item',
-      'product' => TRUE,
-    ),
-    'vih_short_course_kayak' => array(
-      'name' => t('Kayak short course'),
-      'description' => t('Used for short couses, where you can rent a kayak.'),
-      'add_form_submit_value' => t('Sign up'),
-      'base' => 'commerce_product_line_item',
-      'product' => TRUE,
-    ),
-    'vih_short_course_sport' => array(
-      'name' => t('Sport short course'),
-      'description' => t('Used for short couses, where you can can select a sport activity.'),
-      'add_form_submit_value' => t('Sign up'),
-      'base' => 'commerce_product_line_item',
-      'product' => TRUE,
-    ),
-  );
-  */
-}
-
-/**
  * Implements hook_commerce_price_component_type_info().
  */
 function vih_short_course_commerce_commerce_price_component_type_info() {
@@ -96,25 +58,34 @@ function vih_short_course_commerce_get_product_ids($array) {
  * Implementation of hook_form_FORMID_alter().
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
-
-  // Make sure that one product display has been registered before starting on a new product display
+  // Make sure that one product display has been registered before starting on a registration for a new product display.
   $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']->field_golf_product[LANGUAGE_NONE]);
 
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
-  $is_cart_products_available = empty($merged_ids);
-  
-  if ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
+  $is_cart_products_available = !empty($merged_ids);
+
+  if ($is_cart_products_available === FALSE AND !empty($cart_product_ids)) {
     $form['pending_order_msg'] = array(
-      '#markup' => '<div class="error">' .
-        t('You have already started registering for another course. Please finish that registration before proceding.') . 
+      '#markup' => '<div class="info">' .
+        t('You have already started registering for another course. Please finish that registration before proceding. ') . 
         l('Go to your cart', 'cart') . 
         '.</div>',
     );
     $form['pending_order_msg']['#weight'] = -50;  
     $form['submit']['#value'] = t('Cannot register - please finish your other order');
     $form['submit']['#disabled'] = TRUE;
+  }
+  elseif ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
+    $form['pending_order_msg'] = array(
+      '#markup' => '<div class="info">' .
+        t('You already registered some people for this course. ') . 
+        l('Go to your cart', 'cart') . 
+        '.</div>',
+    );
+    $form['pending_order_msg']['#weight'] = -50;
+    $form['submit']['#value'] = t('Register');
   }
   else {
     $form['submit']['#value'] = t('Register');
