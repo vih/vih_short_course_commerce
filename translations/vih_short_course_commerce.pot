@@ -271,7 +271,7 @@ msgid "You have already started a registration. Please finish that registration 
 msgstr ""
 
 #: vih_short_course_commerce.module:77
-msgid "Cannot register - please finish your other registration"
+msgid "Cannot sign up - please finish your other registration"
 msgstr ""
 
 #: vih_short_course_commerce.module:83
@@ -279,7 +279,7 @@ msgid "You already added some people. Add more or "
 msgstr ""
 
 #: vih_short_course_commerce.module:88;94
-msgid "Register"
+msgid "Sign up"
 msgstr ""
 
 #: vih_short_course_commerce.module:92
