@@ -44,7 +44,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg'] = array(
       '#markup' => '<h2>' . t('Registration') . '</h2><div class="info">' .
         t('You have already started a registration. Please finish that registration before proceding. ') . 
-        l('Go to your current registration', 'cart') . 
+        l(t('Go to your current registration'), 'cart') . 
         '.</div>',
     );
     $form['pending_order_msg']['#weight'] = -50;  
@@ -55,7 +55,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg'] = array(
       '#markup' => '<h2>' . t('Registration') . '</h2><div class="info">' .
         t('You already added some people. Add more or ') . 
-        l('go to your registration', 'cart') . 
+        l(t('go to your registration'), 'cart') . 
         '.</div>',
     );
     $form['pending_order_msg']['#weight'] = -50;

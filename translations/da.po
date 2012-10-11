@@ -310,6 +310,9 @@ msgstr ""
 msgid "VIH"
 msgstr ""
 
-#: vih_short_course_commerce.info:0
 msgid "go to your registration"
 msgstr "gå til din tilmelding"
+
+msgid "Go to your current registration"
+msgstr "gå til din nuværende tilmelding"
+
