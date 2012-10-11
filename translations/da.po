@@ -1,0 +1,312 @@
+# $Id$
+#
+# Danish translation of Drupal (general)
+# Copyright 2012 <lars@vih.dk>
+# Generated from files:
+#  vih_short_course_commerce.features.field.inc: n/a
+#  vih_short_course_commerce.features.inc: n/a
+#  vih_short_course_commerce.views_default.inc: n/a
+#  vih_short_course_commerce.module: n/a
+#  vih_short_course_commerce.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2012-10-09 13:41+0200\n"
+"PO-Revision-Date: 2012-10-10 12:17+0100\n"
+"Last-Translator: Lars Olesen <lars@vih.dk>\n"
+"Language-Team: VIH <webmaster@vih.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: vih_short_course_commerce.features.field.inc:8836
+msgid "Aldersgruppe"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8837
+msgid "Billede"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8838
+msgid "Body"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8839
+msgid "CPR-nummer"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8840
+msgid "DGU-medlemsnummer"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8841
+msgid "Display path"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8842
+msgid "E-mail"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8843
+msgid "Golf handicap"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8844
+msgid "Golfbaner"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8845
+msgid "Hvis du ikke har et handicap skal du skrive 99."
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8846
+msgid "Kajakleje"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8847
+msgid "Klub"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8848
+msgid "Kursusleder"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8849
+msgid "Kursustype"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8850
+msgid "Navn"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8851
+msgid "Oprindelsesland"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8852
+msgid "Price"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8853
+msgid "Product"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8854
+msgid "Produkt"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8855
+msgid "Sambo"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8856
+msgid "Skema"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8857
+msgid "Subjects"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8858
+msgid "Tidspunkt"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8859
+msgid "Total"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8860
+msgid "Underviser"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8861
+msgid "Unit price"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8862
+msgid "Værelse"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:8863
+msgid "Værelser"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:139
+msgid "Short Course Basic"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:141
+msgid "Used for short courses which does not use a special line item."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:143;151;159;167;175;183;191
+msgid "Title"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:147
+msgid "Short Course Family"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:155
+msgid "Short Course Golf"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:157
+msgid "Used for the golf courses."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:163
+msgid "Short Course Kajak"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:165
+msgid "Used for the kayak courses."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:171
+msgid "Short Course Sommercamp"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:179
+msgid "Short Course Sport Camp"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:187
+msgid "VIH Short Course Subject"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:189
+msgid "Subjects for the sportcamp."
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:94
+msgid "Master"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:95
+msgid "more"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:96
+msgid "Apply"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:97
+msgid "Reset"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:98
+msgid "Sort by"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:99
+msgid "Asc"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:100
+msgid "Desc"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:101
+msgid "Items per page"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:102
+msgid "- All -"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:103
+msgid "Offset"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:104
+msgid "« first"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:105
+msgid "‹ previous"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:106
+msgid "next ›"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:107
+msgid "last »"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:108
+msgid "Content referencing Content from field_short_course_subjects"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:109
+msgid "All"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:110
+msgid "Entity Reference"
+msgstr ""
+
+#: vih_short_course_commerce.module:16
+msgid "Short course"
+msgstr ""
+
+#: vih_short_course_commerce.module:17
+msgid "Defines a short course product that users can sign up for."
+msgstr ""
+
+#: vih_short_course_commerce.module:28;29
+msgid "Kayak fee"
+msgstr ""
+
+#: vih_short_course_commerce.module:71;82;92
+msgid "Registration"
+msgstr ""
+
+#: vih_short_course_commerce.module:72
+msgid "You have already started a registration. Please finish that registration before proceding. "
+msgstr "Du er allerede startet på en tilmelding. Du skal først gøre den tilmelding færdig, før du kan starte en ny tilmelding. "
+
+#: vih_short_course_commerce.module:77
+msgid "Cannot sign up - please finish your other registration"
+msgstr "Gør venligst din anden tilmelding færdig"
+
+#: vih_short_course_commerce.module:83
+msgid "You already added some people. Add more or "
+msgstr "Du har allerede tilføjet nogen til tilmeldingen. Tilføj flere eller "
+
+#: vih_short_course_commerce.module:88;94
+msgid "Sign up"
+msgstr "Tilmeld"
+
+#: vih_short_course_commerce.module:92
+msgid "You can register as many people as you like. Add one at a time using the form below."
+msgstr "Du kan tilmelde så mange mennesker, som du har lyst til. Du tilføjer en person ad gangen i nedenstående formular."
+
+#: vih_short_course_commerce.module:104
+msgid "Additional products"
+msgstr ""
+
+#: vih_short_course_commerce.module:115
+msgid "Do not rent kayak"
+msgstr "Lej ikke kajak"
+
+#: vih_short_course_commerce.module:120
+msgid "Rent a kayak?"
+msgstr "Lej en kajak?"
+
+#: vih_short_course_commerce.info:0
+msgid "VIH Short Course Commerce"
+msgstr ""
+
+#: vih_short_course_commerce.info:0
+msgid "Adds short course integration with commerce"
+msgstr ""
+
+#: vih_short_course_commerce.info:0
+msgid "VIH"
+msgstr ""
+
