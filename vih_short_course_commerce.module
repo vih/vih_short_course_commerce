@@ -7,32 +7,6 @@
 include_once('vih_short_course_commerce.features.inc');
 
 /**
- * Implements hook_commerce_product_type_info().
- */
-function vih_short_course_commerce_commerce_product_type_info() {
-  return array(
-    'vih_short_course' => array(
-      'type' => 'vih_short_course',
-      'name' => t('Short course'),
-      'description' => t('Defines a short course product that users can sign up for.'),
-    ),
-  );
-}
-
-/**
- * Implements hook_commerce_price_component_type_info().
- */
-function vih_short_course_commerce_commerce_price_component_type_info() {
-  return array(
-    'vih_kayak_fee' => array(
-      'title' => t('Kayak fee'),
-      'display_title' => t('Kayak fee'),
-      'weight' => -50,
-    ),
-  );
-}
-
-/**
 * Implements hook_admin_paths().
 */
 function vih_short_course_commerce_admin_paths() {
