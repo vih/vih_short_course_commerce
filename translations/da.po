@@ -264,7 +264,7 @@ msgstr ""
 
 #: vih_short_course_commerce.module:71;82;92
 msgid "Registration"
-msgstr ""
+msgstr "Tilmelding"
 
 #: vih_short_course_commerce.module:72
 msgid "You have already started a registration. Please finish that registration before proceding. "
