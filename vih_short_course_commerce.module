@@ -59,8 +59,15 @@ function vih_short_course_commerce_get_product_ids($array) {
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
   // Make sure that one product display has been registered before starting on a registration for a new product display.
-  $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']->field_golf_product[LANGUAGE_NONE]);
-
+  if (!empty($form_state['context']['entity']->field_golf_product[LANGUAGE_NONE])) {
+    $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']->field_golf_product[LANGUAGE_NONE]);
+  }
+  elseif($form_state['context']['entity']->field_product[LANGUAGE_NONE]) {
+    $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']->field_product[LANGUAGE_NONE]);
+  }
+  else {
+    return;
+  }
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
