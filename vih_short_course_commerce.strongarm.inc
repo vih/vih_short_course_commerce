@@ -37,20 +37,23 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '9',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '10',
         ),
       ),
       'display' => array(
@@ -68,7 +71,7 @@ function vih_short_course_commerce_strongarm() {
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '5',
             'visible' => TRUE,
           ),
         ),
@@ -86,8 +89,8 @@ function vih_short_course_commerce_strongarm() {
         ),
         'product:field_agegroup' => array(
           'default' => array(
-            'weight' => '7',
-            'visible' => TRUE,
+            'weight' => '8',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -380,20 +383,23 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '10',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '8',
         ),
       ),
       'display' => array(
@@ -465,20 +471,23 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '6',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
       ),
       'display' => array(

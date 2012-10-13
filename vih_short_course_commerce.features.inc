@@ -9,48 +9,6 @@
  */
 function vih_short_course_commerce_commerce_line_item_default_types() {
   $items = array(
-    'vih_short_course' => array(
-      'name' => 'VIH Short Course',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
-    'vih_short_course_family' => array(
-      'name' => 'VIH Short Course Family',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
-    'vih_short_course_golf' => array(
-      'name' => 'VIH Short Course Golf',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
-    'vih_short_course_kayak' => array(
-      'name' => 'VIH Short Course Kayak',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
-    'vih_short_course_sommercamp' => array(
-      'name' => 'VIH Short Course Sommercamp',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
-    'vih_short_course_sport' => array(
-      'name' => 'VIH Short Course Sport',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Add product',
-      'base' => 'commerce_product_line_item',
-    ),
   );
   return $items;
 }
@@ -138,7 +96,7 @@ function vih_short_course_commerce_node_info() {
     'short_course_basic' => array(
       'name' => t('Short Course Basic'),
       'base' => 'node_content',
-      'description' => t('Used for short courses which does not use a special line item.'),
+      'description' => t('Use <em>short course basic</em> for courses where you need info about room type and social security number.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -148,7 +106,7 @@ function vih_short_course_commerce_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'vih_short_course_golf' => array(
@@ -172,7 +130,7 @@ function vih_short_course_commerce_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'vih_short_course_sport_camp' => array(
@@ -184,11 +142,11 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_subject' => array(
-      'name' => t('VIH Short Course Subject'),
+      'name' => t('Short Course Subject'),
       'base' => 'node_content',
       'description' => t('Subjects for the sportcamp.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
