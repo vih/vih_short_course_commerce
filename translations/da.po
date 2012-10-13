@@ -88,11 +88,11 @@ msgstr ""
 
 #: vih_short_course_commerce.features.field.inc:8852
 msgid "Price"
-msgstr ""
+msgstr "Pris"
 
 #: vih_short_course_commerce.features.field.inc:8853
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: vih_short_course_commerce.features.field.inc:8854
 msgid "Produkt"
@@ -124,7 +124,7 @@ msgstr ""
 
 #: vih_short_course_commerce.features.field.inc:8861
 msgid "Unit price"
-msgstr ""
+msgstr "Stk. pris"
 
 #: vih_short_course_commerce.features.field.inc:8862
 msgid "Værelse"
@@ -144,15 +144,15 @@ msgstr ""
 
 #: vih_short_course_commerce.features.inc:143;151;159;167;175;183;191
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: vih_short_course_commerce.features.inc:147
 msgid "Short Course Family"
-msgstr ""
+msgstr "Kort kursus familie"
 
 #: vih_short_course_commerce.features.inc:155
 msgid "Short Course Golf"
-msgstr ""
+msgstr "Kort kursus golf"
 
 #: vih_short_course_commerce.features.inc:157
 msgid "Used for the golf courses."
@@ -160,7 +160,7 @@ msgstr ""
 
 #: vih_short_course_commerce.features.inc:163
 msgid "Short Course Kajak"
-msgstr ""
+msgstr "Kort kursus kajak"
 
 #: vih_short_course_commerce.features.inc:165
 msgid "Used for the kayak courses."
@@ -168,19 +168,19 @@ msgstr ""
 
 #: vih_short_course_commerce.features.inc:171
 msgid "Short Course Sommercamp"
-msgstr ""
+msgstr "Kort kursus sommercamp"
 
 #: vih_short_course_commerce.features.inc:179
 msgid "Short Course Sport Camp"
-msgstr ""
+msgstr "Kort kursus idrætscamp"
 
 #: vih_short_course_commerce.features.inc:187
 msgid "VIH Short Course Subject"
-msgstr ""
+msgstr "Kort kursus idrætscamp speciale"
 
 #: vih_short_course_commerce.features.inc:189
 msgid "Subjects for the sportcamp."
-msgstr ""
+msgstr "Specialer for idrætscamp"
 
 #: vih_short_course_commerce.views_default.inc:94
 msgid "Master"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: vih_short_course_commerce.module:16
 msgid "Short course"
-msgstr ""
+msgstr "Kort kursus"
 
 #: vih_short_course_commerce.module:17
 msgid "Defines a short course product that users can sign up for."
