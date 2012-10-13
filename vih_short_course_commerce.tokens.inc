@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Token integration for the Commerce order backoffice module.
+ * Token integration for the VIH. Taken from Commerce order backoffice module.
  */
 /**
  * Implements hook_token_info().
