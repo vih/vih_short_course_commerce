@@ -9,6 +9,48 @@
  */
 function vih_short_course_commerce_commerce_line_item_default_types() {
   $items = array(
+    'vih_short_course' => array(
+      'name' => 'VIH Short Course',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
+    'vih_short_course_family' => array(
+      'name' => 'VIH Short Course Family',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
+    'vih_short_course_golf' => array(
+      'name' => 'VIH Short Course Golf',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
+    'vih_short_course_kayak' => array(
+      'name' => 'VIH Short Course Kayak',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
+    'vih_short_course_sommercamp' => array(
+      'name' => 'VIH Short Course Sommercamp',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
+    'vih_short_course_sport' => array(
+      'name' => 'VIH Short Course Sport',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
   );
   return $items;
 }
@@ -102,7 +144,7 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_family' => array(
-      'name' => t('Short Course Family'),
+      'name' => t('Kort kursus familie'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
@@ -126,7 +168,7 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_sommercamp' => array(
-      'name' => t('Short Course Sommercamp'),
+      'name' => t('Kort kursus sommercamp'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

@@ -13,7 +13,7 @@ function vih_short_course_commerce_views_default_views() {
   $view = new view();
   $view->name = 'vih_short_course_sportcamp_subjects';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'VIH';
   $view->base_table = 'node';
   $view->human_name = 'VIH Short Course Sportcamp Subjects';
   $view->core = 7;
