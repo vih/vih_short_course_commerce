@@ -80,6 +80,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $view->set_arguments(array($order_wrapper->getIdentifier()));
     $view->hide_admin_links = TRUE;
     $form['current_order']['#markup'] = $view->preview();
+    $form['current_order']['#weight'] = -99;
   }  
 
   // Add read only price field to add to cart form.
