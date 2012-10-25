@@ -69,7 +69,19 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg']['#markup'] = '<h2>' . t('Registration') . '</h2><p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
     $form['pending_order_msg']['#weight'] = -100;
     $form['submit']['#value'] = t('Sign up');
-  } 
+  }
+
+  // Add read only price field to add to cart form
+  if (isset($form_state['default_product']->commerce_price)){
+    $price = commerce_product_calculate_sell_price($form_state['default_product']);
+    $form['display_price'] = array(
+      '#title' => t('Price'),
+      '#type' => 'item',
+      '#markup' => commerce_currency_format($price['amount'], $price['currency_code']),
+      '#prefix' => '<div class="display-price">',
+      '#suffix' => '</div>',
+    );
+  }
 
   // Kayak courses - add possiblity to rent a kayak
   if ($form_state['context']['entity']->type = 'vih_short_course_kajak') {
