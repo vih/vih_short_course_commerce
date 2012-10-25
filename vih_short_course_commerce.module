@@ -70,8 +70,19 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg']['#weight'] = -100;
     $form['submit']['#value'] = t('Sign up');
   }
+  
+  // Adding current people in the order.
+  global $user;
+  $order = commerce_cart_order_load($user->uid);
+  if ($order) {
+    $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+    $view = views_get_view('commerce_cart_summary');
+    $view->set_arguments(array($order_wrapper->getIdentifier()));
+    $view->hide_admin_links = TRUE;
+    $form['current_order']['#markup'] = $view->preview();
+  }  
 
-  // Add read only price field to add to cart form
+  // Add read only price field to add to cart form.
   if (isset($form_state['default_product']->commerce_price)){
     $price = commerce_product_calculate_sell_price($form_state['default_product']);
     $form['display_price'] = array(
@@ -83,7 +94,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     );
   }
 
-  // Kayak courses - add possiblity to rent a kayak
+  // Kayak courses - add possiblity to rent a kayak.
   if ($form_state['context']['entity']->type = 'vih_short_course_kajak') {
   
     if (!empty($form_state['context']['entity']->field_rent_kayak)) {
