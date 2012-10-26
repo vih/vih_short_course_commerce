@@ -275,7 +275,7 @@ msgstr ""
 
 #: vih_short_course_commerce.module:68
 msgid "Go to your current registration"
-msgstr "gå til din nuværende tilmelding"
+msgstr "Gå til din nuværende tilmelding"
 
 #: vih_short_course_commerce.module:72
 msgid "Cannot sign up - please finish your other registration"
