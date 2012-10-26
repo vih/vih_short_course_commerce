@@ -89,7 +89,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['display_price'] = array(
       '#title' => t('Price'),
       '#type' => 'item',
-      '#markup' => commerce_currency_format($price['amount'], $price['currency_code']),
+      '#markup' => '<span class="display-price-amount">' . commerce_currency_format($price['amount'], $price['currency_code']) . '</span>',
       '#prefix' => '<div class="display-price">',
       '#suffix' => '</div>',
     );
