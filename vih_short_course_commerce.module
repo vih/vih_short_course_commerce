@@ -154,11 +154,22 @@ function vih_short_course_commerce_add_to_cart_form_submit_after($form, &$form_s
 
   // Add any selected training.
   if (!empty($form_state['values']['kayak']) && is_numeric($form_state['values']['kayak']) && $form_state['values']['kayak'] != 'none') {
-    commerce_cart_product_add_by_id($form_state['values']['kayak'], $form_state['values']['quantity'], FALSE, $user->uid);
-  }
+    $line_item = NULL;
+    if ($product = commerce_product_load(check_plain($form_state['values']['kayak']))) {
+      $line_item = commerce_product_line_item_new($product, check_plain($form_state['values']['quantity']), check_plain($form_state['line_item']->order_id), array(), 'vih_kayak');
 
-  // Redirect to the page.
-  // $form_state['redirect'] = 'cart';
+      commerce_line_item_save($line_item);
+
+      $line_item->field_wetsuit_size[LANGUAGE_NONE][0]['value'] = check_plain($form_state['values']['wetsuit_size']);
+      
+      $line_item->field_registrant_name[LANGUAGE_NONE][0]['value'] = check_plain($form_state['values']['line_item_fields']['field_registrant_name'][LANGUAGE_NONE][0]['value']);
+      
+      $line_item = commerce_line_item_load($line_item->line_item_id);
+
+      $combine_products = FALSE;
+      $line_item = commerce_cart_product_add($user->uid, $line_item, $combine_products);
+    }
+  }
 }
 
 /**
