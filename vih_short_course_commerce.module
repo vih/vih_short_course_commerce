@@ -116,7 +116,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
         '#title' => t('Size for wetsuit'),
         '#options' => $options,
         '#default_value' => 'none',
-        '#weight' => 20,
+        '#weight' => 25,
       );
       
       array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
