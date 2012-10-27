@@ -92,8 +92,10 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
       $price = commerce_product_calculate_sell_price($kayak_product);
       $price = ' (' . commerce_currency_format($price['amount'], $price['currency_code']) . ')';
 
-      $options = array('none' => t('No, thanks'));
-      $options[$kayak_product->product_id] = $kayak_product->title . ' <span class="kayak-price">'. $price . '</span>';
+      $options = array(
+        'none' => t('No, thanks'),
+        $kayak_product->product_id => $kayak_product->title . ' <span class="kayak-price">'. $price . '</span>',        
+      );
 
       $form['rent_kayak']['kayak'] = array(
         '#type' => 'radios',
@@ -104,19 +106,23 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
       );
 
       $options = array(
-        '' => t('Choose'),
         'S' => t('Small'),
         'M' => t('Medium'),
         'L' => t('Large'),
         'XL' => t('X-Large'),        
       );
-
+      
       $form['rent_kayak']['wetsuit_size'] = array(
         '#type' => 'radios',
         '#title' => t('Size for wetsuit'),
         '#options' => $options,
-        '#default_value' => 'none',
+        '#default_value' => '',
         '#weight' => 25,
+        '#states' => array(
+          'invisible' => array(
+            ':input[name="kayak"]' => array('value' => 'none'),
+          ),
+        ),
       );
       
       array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
