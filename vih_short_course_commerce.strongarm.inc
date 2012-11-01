@@ -72,7 +72,7 @@ function vih_short_course_commerce_strongarm() {
         'product:commerce_price' => array(
           'default' => array(
             'weight' => '5',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -90,6 +90,12 @@ function vih_short_course_commerce_strongarm() {
         'product:field_agegroup' => array(
           'default' => array(
             'weight' => '8',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '5',
             'visible' => FALSE,
           ),
         ),
@@ -125,6 +131,9 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -156,8 +165,8 @@ function vih_short_course_commerce_strongarm() {
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '5',
-            'visible' => TRUE,
+            'weight' => '8',
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -173,6 +182,12 @@ function vih_short_course_commerce_strongarm() {
           ),
         ),
         'product:field_agegroup' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:status' => array(
           'default' => array(
             'weight' => '7',
             'visible' => FALSE,
@@ -213,6 +228,9 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -245,7 +263,7 @@ function vih_short_course_commerce_strongarm() {
         'product:commerce_price' => array(
           'default' => array(
             'weight' => '6',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -264,6 +282,12 @@ function vih_short_course_commerce_strongarm() {
           'default' => array(
             'weight' => '43',
             'visible' => TRUE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -298,6 +322,9 @@ function vih_short_course_commerce_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -317,20 +344,20 @@ function vih_short_course_commerce_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '12',
+            'weight' => '14',
             'visible' => FALSE,
           ),
         ),
         'product:commerce_price' => array(
           'default' => array(
-            'weight' => '6',
-            'visible' => TRUE,
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -341,7 +368,7 @@ function vih_short_course_commerce_strongarm() {
         ),
         'product:field_room' => array(
           'default' => array(
-            'weight' => '9',
+            'weight' => '12',
             'visible' => FALSE,
           ),
         ),
@@ -349,6 +376,24 @@ function vih_short_course_commerce_strongarm() {
           'default' => array(
             'weight' => '43',
             'visible' => TRUE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:field_registrant_name' => array(
+          'default' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:field_wetsuite_size' => array(
+          'default' => array(
+            'weight' => '7',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -405,20 +450,20 @@ function vih_short_course_commerce_strongarm() {
       'display' => array(
         'product:sku' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),
         'product:title' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
         'product:commerce_price' => array(
           'default' => array(
             'weight' => '4',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -434,6 +479,12 @@ function vih_short_course_commerce_strongarm() {
           ),
         ),
         'product:field_agegroup' => array(
+          'default' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:status' => array(
           'default' => array(
             'weight' => '7',
             'visible' => FALSE,
@@ -506,7 +557,7 @@ function vih_short_course_commerce_strongarm() {
         'product:commerce_price' => array(
           'default' => array(
             'weight' => '5',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
         'product:field_entity_registration' => array(
@@ -527,6 +578,12 @@ function vih_short_course_commerce_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );
@@ -537,7 +594,32 @@ function vih_short_course_commerce_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__vih_short_course_subject';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'media_gallery_block' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(

@@ -27,6 +27,7 @@ function vih_short_course_commerce_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
@@ -88,6 +89,79 @@ function vih_short_course_commerce_views_default_views() {
     'vih_short_course_subject' => 'vih_short_course_subject',
   );
 
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Felt: Felt: Billede */
+  $handler->display->display_options['fields']['field_picture']['id'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['table'] = 'field_data_field_picture';
+  $handler->display->display_options['fields']['field_picture']['field'] = 'field_picture';
+  $handler->display->display_options['fields']['field_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_picture']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'content',
+  );
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Felt: Indhold: Udgivet */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['type'] = 'unicode-yes-no';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Felt: Indhold: Redigér-link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Felt: Indhold: Slet-link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'vih_short_course_subject' => 'vih_short_course_subject',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
   /* Display: Entity Reference */
   $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -102,8 +176,30 @@ function vih_short_course_commerce_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Forbindelse: Entity Reference: Refererende entity */
+  $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['id'] = 'reverse_field_short_course_subjects_node';
+  $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['field'] = 'reverse_field_short_course_subjects_node';
+  $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['required'] = TRUE;
+  /* Forbindelse: Indhold: Refereret produkt */
+  $handler->display->display_options['relationships']['field_golf_product_product_id']['id'] = 'field_golf_product_product_id';
+  $handler->display->display_options['relationships']['field_golf_product_product_id']['table'] = 'field_data_field_golf_product';
+  $handler->display->display_options['relationships']['field_golf_product_product_id']['field'] = 'field_golf_product_product_id';
+  $handler->display->display_options['relationships']['field_golf_product_product_id']['relationship'] = 'reverse_field_short_course_subjects_node';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontekstuelt filter: Commerce Product: Produkt-ID */
+  $handler->display->display_options['arguments']['product_id']['id'] = 'product_id';
+  $handler->display->display_options['arguments']['product_id']['table'] = 'commerce_product';
+  $handler->display->display_options['arguments']['product_id']['field'] = 'product_id';
+  $handler->display->display_options['arguments']['product_id']['relationship'] = 'field_golf_product_product_id';
+  $handler->display->display_options['arguments']['product_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['product_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['product_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['product_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['product_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['product_id']['summary_options']['items_per_page'] = '25';
   $translatables['vih_short_course_sportcamp_subjects'] = array(
     t('Master'),
     t('mere'),
@@ -121,7 +217,11 @@ function vih_short_course_commerce_views_default_views() {
     t('sidste »'),
     t('Indhold refererer til Indhold fra field_short_course_subjects'),
     t('Alle'),
+    t('Content pane'),
+    t('Udgivet'),
+    t('View panes'),
     t('Entity Reference'),
+    t('Produkt'),
   );
   $export['vih_short_course_sportcamp_subjects'] = $view;
 
