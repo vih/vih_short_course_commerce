@@ -56,7 +56,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   $order = commerce_cart_order_load($user->uid);
   if ($order) {
     $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
-    $view = views_get_view('commerce_cart_summary');
+    $view = views_get_view('vih_shopping_cart_summary');
     $view->set_arguments(array($order_wrapper->getIdentifier()));
     $view->hide_admin_links = TRUE;
     $form['current_order']['#markup'] = $view->preview();
