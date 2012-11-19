@@ -35,6 +35,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg']['#weight'] = -100;  
     $form['submit']['#value'] = t('Cannot sign up - please finish your other registration');
     $form['submit']['#disabled'] = TRUE;
+    unset($form['line_item_fields']);
   }
   elseif ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
     $form['pending_order_msg']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2><div class="info">' .
