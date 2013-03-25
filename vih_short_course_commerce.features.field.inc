@@ -4256,206 +4256,6 @@ function vih_short_course_commerce_field_default_fields() {
     ),
   );
 
-  // Exported field: 'commerce_product-vih_kayak-field_registrant_name'.
-  $fields['commerce_product-vih_kayak-field_registrant_name'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_registrant_name',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'vih_kayak',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'add_to_cart_confirmation_view' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 1,
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'line_item' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'node_teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'commerce_product',
-      'field_name' => 'field_registrant_name',
-      'label' => 'Navn',
-      'required' => 0,
-      'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'filtered_html' => 'filtered_html',
-            'full_html' => 'full_html',
-            'mailchimp_campaign' => 'mailchimp_campaign',
-            'plain_text' => 'plain_text',
-          ),
-          'allowed_formats_toggle' => 0,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'filtered_html' => array(
-                'weight' => '0',
-              ),
-              'full_html' => array(
-                'weight' => '1',
-              ),
-              'mailchimp_campaign' => array(
-                'weight' => '0',
-              ),
-              'plain_text' => array(
-                'weight' => '10',
-              ),
-            ),
-          ),
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '42',
-      ),
-    ),
-  );
-
-  // Exported field: 'commerce_product-vih_kayak-field_wetsuite_size'.
-  $fields['commerce_product-vih_kayak-field_wetsuite_size'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_wetsuite_size',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          'S' => 'Small',
-          'M' => 'Medium',
-          'L' => 'Large',
-          'XL' => 'X-Large',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'vih_kayak',
-      'commerce_cart_settings' => array(
-        'attribute_field' => 0,
-        'attribute_widget' => 'select',
-      ),
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'add_to_cart_confirmation_view' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 2,
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'line_item' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'node_teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'commerce_product',
-      'field_name' => 'field_wetsuite_size',
-      'label' => 'Wetsuite size',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '43',
-      ),
-    ),
-  );
-
   // Exported field: 'commerce_product-vih_short_course_basic-commerce_price'.
   $fields['commerce_product-vih_short_course_basic-commerce_price'] = array(
     'field_config' => array(
@@ -4602,6 +4402,91 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'commerce_price_full',
         'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'commerce_product-vih_short_course_basic-commerce_stock'.
+  $fields['commerce_product-vih_short_course_basic-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_basic',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 2,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 7,
       ),
     ),
   );
@@ -4846,6 +4731,91 @@ function vih_short_course_commerce_field_default_fields() {
     ),
   );
 
+  // Exported field: 'commerce_product-vih_short_course_family-commerce_stock'.
+  $fields['commerce_product-vih_short_course_family-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_family',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 3,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 44,
+      ),
+    ),
+  );
+
   // Exported field: 'commerce_product-vih_short_course_family-field_agegroup'.
   $fields['commerce_product-vih_short_course_family-field_agegroup'] = array(
     'field_config' => array(
@@ -5082,6 +5052,91 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'commerce_price_full',
         'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'commerce_product-vih_short_course_kayak-commerce_stock'.
+  $fields['commerce_product-vih_short_course_kayak-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_kayak',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 4,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 45,
       ),
     ),
   );
@@ -5326,6 +5381,91 @@ function vih_short_course_commerce_field_default_fields() {
     ),
   );
 
+  // Exported field: 'commerce_product-vih_short_course_sommercamp-commerce_stock'.
+  $fields['commerce_product-vih_short_course_sommercamp-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_sommercamp',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 1,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 41,
+      ),
+    ),
+  );
+
   // Exported field: 'commerce_product-vih_short_course_sportcamp-commerce_price'.
   $fields['commerce_product-vih_short_course_sportcamp-commerce_price'] = array(
     'field_config' => array(
@@ -5479,6 +5619,91 @@ function vih_short_course_commerce_field_default_fields() {
     ),
   );
 
+  // Exported field: 'commerce_product-vih_short_course_sportcamp-commerce_stock'.
+  $fields['commerce_product-vih_short_course_sportcamp-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_sportcamp',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 3,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 45,
+      ),
+    ),
+  );
+
   // Exported field: 'commerce_product-vih_short_course_sportcamp-field_room'.
   $fields['commerce_product-vih_short_course_sportcamp-field_room'] = array(
     'field_config' => array(
@@ -5599,7 +5824,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'commerce_line_item_display' => array(
           'label' => 'hidden',
@@ -5644,7 +5869,7 @@ function vih_short_course_commerce_field_default_fields() {
             'calculation' => 'calculated_sell_price',
           ),
           'type' => 'commerce_price_formatted_amount',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'node_full' => array(
           'label' => 'hidden',
@@ -5689,7 +5914,7 @@ function vih_short_course_commerce_field_default_fields() {
             'calculation' => 'calculated_sell_price',
           ),
           'type' => 'commerce_price_formatted_amount',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'token' => array(
           'label' => 'hidden',
@@ -5715,6 +5940,91 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'commerce_price_full',
         'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'commerce_product-vih_shourt_course_golf-commerce_stock'.
+  $fields['commerce_product-vih_shourt_course_golf-commerce_stock'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'commerce_product',
+      ),
+      'field_name' => 'commerce_stock',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_shourt_course_golf',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => NULL,
+      'display' => array(
+        'add_to_cart_confirmation_view' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 4,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'line_item' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'node_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'commerce_product',
+      'field_name' => 'commerce_stock',
+      'label' => 'Lager',
+      'required' => TRUE,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => 42,
       ),
     ),
   );
@@ -5761,7 +6071,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
         'default' => array(
           'label' => 'above',
@@ -5780,13 +6090,13 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'node_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'commerce_product',
@@ -6108,7 +6418,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '9',
         ),
         'ical' => array(
           'label' => 'above',
@@ -6182,7 +6492,7 @@ function vih_short_course_commerce_field_default_fields() {
             'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'ical' => array(
           'label' => 'above',
@@ -6296,6 +6606,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -6327,6 +6640,103 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-short_course_basic-field_short_course_lecture'.
+  $fields['node-short_course_basic-field_short_course_lecture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_course_lecture',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'vih_lecture' => 'vih_lecture',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'short_course_basic',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 10,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_short_course_lecture',
+      'label' => 'Foredrag',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 1,
+          'references_dialog_search' => 1,
+          'references_dialog_search_view' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
       ),
     ),
   );
@@ -6581,7 +6991,7 @@ function vih_short_course_commerce_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -6720,7 +7130,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '11',
         ),
         'ical' => array(
           'label' => 'above',
@@ -6844,7 +7254,7 @@ function vih_short_course_commerce_field_default_fields() {
           ),
         ),
         'type' => 'inline_entity_form',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -6909,6 +7319,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -6940,6 +7353,103 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_short_course_family-field_short_course_lecture'.
+  $fields['node-vih_short_course_family-field_short_course_lecture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_course_lecture',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'vih_lecture' => 'vih_lecture',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_family',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 12,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_short_course_lecture',
+      'label' => 'Foredrag',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 1,
+          'references_dialog_search' => 1,
+          'references_dialog_search_view' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '6',
       ),
     ),
   );
@@ -7250,7 +7760,7 @@ function vih_short_course_commerce_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7338,7 +7848,7 @@ function vih_short_course_commerce_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7425,7 +7935,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '8',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7514,7 +8024,7 @@ function vih_short_course_commerce_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7589,7 +8099,7 @@ function vih_short_course_commerce_field_default_fields() {
             'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
-          'weight' => '7',
+          'weight' => '5',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7628,7 +8138,7 @@ function vih_short_course_commerce_field_default_fields() {
           ),
         ),
         'type' => 'inline_entity_form',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -7693,6 +8203,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -7724,6 +8237,103 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_short_course_golf-field_short_course_lecture'.
+  $fields['node-vih_short_course_golf-field_short_course_lecture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_course_lecture',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'vih_lecture' => 'vih_lecture',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_golf',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 9,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_short_course_lecture',
+      'label' => 'Foredrag',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 1,
+          'references_dialog_search' => 1,
+          'references_dialog_search_view' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
       ),
     ),
   );
@@ -7769,7 +8379,7 @@ function vih_short_course_commerce_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'ical' => array(
           'label' => 'above',
@@ -7971,7 +8581,7 @@ function vih_short_course_commerce_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -8111,7 +8721,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '7',
         ),
         'ical' => array(
           'label' => 'above',
@@ -8230,7 +8840,7 @@ function vih_short_course_commerce_field_default_fields() {
           ),
         ),
         'type' => 'inline_entity_form',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -8296,6 +8906,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -8316,7 +8929,7 @@ function vih_short_course_commerce_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -8357,7 +8970,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '10',
         ),
         'ical' => array(
           'label' => 'above',
@@ -8405,7 +9018,104 @@ function vih_short_course_commerce_field_default_fields() {
           ),
         ),
         'type' => 'inline_entity_form',
-        'weight' => '8',
+        'weight' => '9',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_short_course_kajak-field_short_course_lecture'.
+  $fields['node-vih_short_course_kajak-field_short_course_lecture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_course_lecture',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'vih_lecture' => 'vih_lecture',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_kajak',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 11,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_short_course_lecture',
+      'label' => 'Foredrag',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 1,
+          'references_dialog_search' => 1,
+          'references_dialog_search_view' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '6',
       ),
     ),
   );
@@ -8491,7 +9201,7 @@ function vih_short_course_commerce_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -8831,98 +9541,6 @@ function vih_short_course_commerce_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-vih_short_course_sommercamp-field_golf_product'.
-  $fields['node-vih_short_course_sommercamp-field_golf_product'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_golf_product',
-      'foreign keys' => array(
-        'product_id' => array(
-          'columns' => array(
-            'product_id' => 'product_id',
-          ),
-          'table' => 'commerce_product',
-        ),
-      ),
-      'indexes' => array(
-        'product_id' => array(
-          0 => 'product_id',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'commerce_product_reference',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'commerce_product_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'vih_short_course_sommercamp',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'commerce_cart',
-          'settings' => array(
-            'combine' => 0,
-            'default_quantity' => '1',
-            'line_item_type' => 'vih_short_course_sommercamp',
-            'show_quantity' => 0,
-            'show_single_product_attributes' => FALSE,
-          ),
-          'type' => 'commerce_cart_add_to_cart_form',
-          'weight' => '6',
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_golf_product',
-      'label' => 'Produkt',
-      'required' => 0,
-      'settings' => array(
-        'field_injection' => 1,
-        'referenceable_types' => array(
-          'product' => 0,
-          'vih_short_course' => 0,
-          'vih_short_course_basic' => 0,
-          'vih_short_course_family' => 0,
-          'vih_short_course_kayak' => 0,
-          'vih_short_course_sommercamp' => 'vih_short_course_sommercamp',
-          'vih_short_course_sportcamp' => 0,
-          'vih_shourt_course_golf' => 0,
-        ),
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'inline_entity_form',
-        'settings' => array(
-          'fields' => array(),
-          'type_settings' => array(
-            'autogenerate_title' => 1,
-            'use_variation_language' => 0,
-          ),
-        ),
-        'type' => 'inline_entity_form',
-        'weight' => '6',
-      ),
-    ),
-  );
-
   // Exported field: 'node-vih_short_course_sommercamp-field_picture'.
   $fields['node-vih_short_course_sommercamp-field_picture'] = array(
     'field_config' => array(
@@ -8983,6 +9601,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -9100,6 +9721,88 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'file_generic',
         'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_short_course_sommercamp-field_webform'.
+  $fields['node-vih_short_course_sommercamp-field_webform'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_webform',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'target_bundles' => array(
+            'webform' => 'webform',
+          ),
+        ),
+        'handler_submit' => 'Change handler',
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_sommercamp',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'entityreference',
+          'settings' => array(
+            'links' => 0,
+            'view_mode' => 'full',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => '9',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_webform',
+      'label' => 'Tilmelding',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 0,
+          'references_dialog_search' => 0,
+          'references_dialog_search_view' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
       ),
     ),
   );
@@ -9408,7 +10111,7 @@ function vih_short_course_commerce_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '10',
         ),
         'ical' => array(
           'label' => 'above',
@@ -9483,7 +10186,7 @@ function vih_short_course_commerce_field_default_fields() {
             'show_single_product_attributes' => FALSE,
           ),
           'type' => 'commerce_cart_add_to_cart_form',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'ical' => array(
           'label' => 'above',
@@ -9523,7 +10226,7 @@ function vih_short_course_commerce_field_default_fields() {
           ),
         ),
         'type' => 'inline_entity_form',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -9588,6 +10291,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -9619,6 +10325,103 @@ function vih_short_course_commerce_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-vih_short_course_sport_camp-field_short_course_lecture'.
+  $fields['node-vih_short_course_sport_camp-field_short_course_lecture'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_short_course_lecture',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'vih_lecture' => 'vih_lecture',
+          ),
+        ),
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'vih_short_course_sport_camp',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 11,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'fences_wrapper' => 'div',
+      'field_name' => 'field_short_course_lecture',
+      'label' => 'Foredrag',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'references_dialog_add' => 0,
+          'references_dialog_edit' => 1,
+          'references_dialog_search' => 1,
+          'references_dialog_search_view' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '8',
       ),
     ),
   );
@@ -9762,7 +10565,7 @@ function vih_short_course_commerce_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
@@ -9874,7 +10677,7 @@ function vih_short_course_commerce_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '41',
+        'weight' => '1',
       ),
     ),
   );
@@ -9939,6 +10742,9 @@ function vih_short_course_commerce_field_default_fields() {
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
+        'focus' => 0,
+        'focus_lock_ratio' => 0,
+        'focus_min_size' => '',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
@@ -9969,7 +10775,7 @@ function vih_short_course_commerce_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '43',
+        'weight' => '2',
       ),
     ),
   );
@@ -9984,6 +10790,7 @@ function vih_short_course_commerce_field_default_fields() {
   t('CPR-nummer (10 cifre)');
   t('DGU-medlemsnummer');
   t('Display path');
+  t('Foredrag');
   t('Golf handicap');
   t('Golfbaner');
   t('Hvis du ikke har et handicap skal du skrive 99.');
@@ -9992,6 +10799,7 @@ function vih_short_course_commerce_field_default_fields() {
   t('Klub');
   t('Kursusleder');
   t('Kursustype');
+  t('Lager');
   t('Navn');
   t('Oprindelsesland');
   t('Phone');
@@ -10002,12 +10810,12 @@ function vih_short_course_commerce_field_default_fields() {
   t('Skema');
   t('Subjects');
   t('Tidspunkt');
+  t('Tilmelding');
   t('Total');
   t('Underviser');
   t('Unit price');
   t('Værelse');
   t('Værelser');
-  t('Wetsuite size');
 
   return $fields;
 }

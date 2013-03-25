@@ -165,7 +165,6 @@ function vih_short_course_commerce_views_default_views() {
   /* Display: Entity Reference */
   $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -200,6 +199,18 @@ function vih_short_course_commerce_views_default_views() {
   $handler->display->display_options['arguments']['product_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['product_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['product_id']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Content pane 2 */
+  $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['vih_short_course_sportcamp_subjects'] = array(
     t('Master'),
     t('mere'),
@@ -222,6 +233,7 @@ function vih_short_course_commerce_views_default_views() {
     t('View panes'),
     t('Entity Reference'),
     t('Produkt'),
+    t('Content pane 2'),
   );
   $export['vih_short_course_sportcamp_subjects'] = $view;
 
