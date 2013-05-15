@@ -22,8 +22,8 @@ function vih_short_course_commerce_admin_paths() {
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
   // Make sure that one product display has been registered before starting on a registration for a new product display.
-
-  $entity = $form_state['context']['entity'];
+  $entities = entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id']));
+  $entity = $entities[$form_state['context']['entity_id']];
   $product_ids = vih_short_course_commerce_get_product_ids($entity);
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
