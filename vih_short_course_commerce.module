@@ -12,7 +12,8 @@ include_once('vih_short_course_commerce.features.inc');
 function vih_short_course_commerce_admin_paths() {
   $paths = array(
     'node/*/registrations' => TRUE,
-    'node/*/registrations/*' => TRUE,    
+    'node/*/registrations/*' => TRUE,
+    'node/*/email' => TRUE,    
   );
   return $paths;
 }
@@ -22,7 +23,9 @@ function vih_short_course_commerce_admin_paths() {
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
   // Make sure that one product display has been registered before starting on a registration for a new product display.
-  $product_ids = vih_short_course_commerce_get_product_ids($form_state['context']['entity']);
+  $entities = entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id']));
+  $entity = $entities[$form_state['context']['entity_id']];
+  $product_ids = vih_short_course_commerce_get_product_ids($entity);
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
   $is_cart_products_available = !empty($merged_ids);
@@ -76,9 +79,9 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   }
 
   // Kayak courses - add possiblity to rent a kayak.
-  if ($form_state['context']['entity']->type = 'vih_short_course_kajak') {
+  if ($entity->type = 'vih_short_course_kajak') {
   
-    if (!empty($form_state['context']['entity']->field_rent_kayak)) {
+    if (!empty($entity->field_rent_kayak)) {
 
       $form['rent_kayak'] = array(
         '#type' => 'fieldset',
@@ -87,7 +90,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
       );
 
       // Only one possible kayak product due to limitations on the content type.
-      $kayak_product_id = $form_state['context']['entity']->field_rent_kayak[LANGUAGE_NONE][0]['product_id'];
+      $kayak_product_id = $entity->field_rent_kayak[LANGUAGE_NONE][0]['product_id'];
       $kayak_product = commerce_product_load($kayak_product_id);
 
       $price = commerce_product_calculate_sell_price($kayak_product);
