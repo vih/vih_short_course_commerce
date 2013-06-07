@@ -12,7 +12,8 @@ include_once('vih_short_course_commerce.features.inc');
 function vih_short_course_commerce_admin_paths() {
   $paths = array(
     'node/*/registrations' => TRUE,
-    'node/*/registrations/*' => TRUE,    
+    'node/*/registrations/*' => TRUE,
+    'node/*/email' => TRUE,    
   );
   return $paths;
 }
