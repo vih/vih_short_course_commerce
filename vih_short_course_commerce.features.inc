@@ -65,49 +65,49 @@ function vih_short_course_commerce_commerce_product_default_types() {
       'name' => 'VIH Kayak',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_short_course_basic' => array(
       'type' => 'vih_short_course_basic',
       'name' => 'VIH Short Course Basic',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_short_course_family' => array(
       'type' => 'vih_short_course_family',
       'name' => 'VIH Short Course Family',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_short_course_kayak' => array(
       'type' => 'vih_short_course_kayak',
       'name' => 'VIH Short Course Kayak',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_short_course_sommercamp' => array(
       'type' => 'vih_short_course_sommercamp',
       'name' => 'VIH Short Course Sommercamp',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_short_course_sportcamp' => array(
       'type' => 'vih_short_course_sportcamp',
       'name' => 'VIH Short Course Sportcamp',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
     'vih_shourt_course_golf' => array(
       'type' => 'vih_shourt_course_golf',
       'name' => 'VIH Short Course Golf',
       'description' => '',
       'help' => '',
-      'revision' => '1',
+      'revision' => 1,
     ),
   );
   return $items;
@@ -127,7 +127,7 @@ function vih_short_course_commerce_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function vih_short_course_commerce_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
