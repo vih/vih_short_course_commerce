@@ -182,11 +182,12 @@ function vih_short_course_commerce_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['field'] = 'reverse_field_short_course_subjects_node';
   $handler->display->display_options['relationships']['reverse_field_short_course_subjects_node']['required'] = TRUE;
-  /* Forbindelse: Indhold: Refereret produkt */
+  /* Forbindelse: Indhold: Referenced products */
   $handler->display->display_options['relationships']['field_golf_product_product_id']['id'] = 'field_golf_product_product_id';
   $handler->display->display_options['relationships']['field_golf_product_product_id']['table'] = 'field_data_field_golf_product';
   $handler->display->display_options['relationships']['field_golf_product_product_id']['field'] = 'field_golf_product_product_id';
   $handler->display->display_options['relationships']['field_golf_product_product_id']['relationship'] = 'reverse_field_short_course_subjects_node';
+  $handler->display->display_options['relationships']['field_golf_product_product_id']['label'] = 'Produkt';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontekstuelt filter: Commerce Product: Produkt-ID */
   $handler->display->display_options['arguments']['product_id']['id'] = 'product_id';

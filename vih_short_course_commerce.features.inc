@@ -116,8 +116,7 @@ function vih_short_course_commerce_commerce_product_default_types() {
 /**
  * Implements hook_ctools_plugin_api().
  */
-function vih_short_course_commerce_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function vih_short_course_commerce_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -126,7 +125,7 @@ function vih_short_course_commerce_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function vih_short_course_commerce_views_api() {
+function vih_short_course_commerce_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
