@@ -73,7 +73,6 @@ features[field_instance][] = commerce_line_item-vih_short_course_family-commerce
 features[field_instance][] = commerce_line_item-vih_short_course_family-commerce_unit_price
 features[field_instance][] = commerce_line_item-vih_short_course_family-field_cpr_nummer
 features[field_instance][] = commerce_line_item-vih_short_course_family-field_registrant_name
-features[field_instance][] = commerce_line_item-vih_short_course_family-field_sportcamp_subjects
 features[field_instance][] = commerce_line_item-vih_short_course_golf-commerce_display_path
 features[field_instance][] = commerce_line_item-vih_short_course_golf-commerce_product
 features[field_instance][] = commerce_line_item-vih_short_course_golf-commerce_total

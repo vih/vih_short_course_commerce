@@ -772,48 +772,6 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course_family-field_sportcamp_subjects'
-  $field_instances['commerce_line_item-vih_short_course_family-field_sportcamp_subjects'] = array(
-    'bundle' => 'vih_short_course_family',
-    'commerce_cart_settings' => array(
-      'field_access' => 1,
-    ),
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'commerce_line_item',
-    'field_name' => 'field_sportcamp_subjects',
-    'label' => 'Subjects',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 46,
-    ),
-  );
-
   // Exported field_instance: 'commerce_line_item-vih_short_course_golf-commerce_display_path'
   $field_instances['commerce_line_item-vih_short_course_golf-commerce_display_path'] = array(
     'bundle' => 'vih_short_course_golf',
