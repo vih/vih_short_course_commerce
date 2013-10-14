@@ -143,7 +143,7 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_family' => array(
-      'name' => t('Kort kursus familie'),
+      'name' => t('Short Course Familiy'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

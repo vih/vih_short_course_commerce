@@ -4277,6 +4277,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4327,6 +4333,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_entity_view',
         'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -4384,6 +4396,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4437,6 +4455,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4483,6 +4507,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -4549,6 +4579,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'sidepicture',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
@@ -4626,6 +4662,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 10,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4684,6 +4726,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'pdf_reader_file',
         'weight' => 4,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4732,6 +4780,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -4784,6 +4838,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -4841,6 +4901,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 3,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4894,6 +4960,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 11,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4941,6 +5013,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 6,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5007,6 +5085,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'sidepicture',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
@@ -5084,6 +5168,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 12,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5122,60 +5212,6 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-vih_short_course_family-field_short_course_subjects'
-  $field_instances['node-vih_short_course_family-field_short_course_subjects'] = array(
-    'bundle' => 'vih_short_course_family',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'view_mode' => 'full',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 2,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_short_course_subjects',
-    'label' => 'Idrætsspecialer',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'references_dialog_add' => 1,
-        'references_dialog_edit' => 1,
-        'references_dialog_search' => 1,
-        'references_dialog_search_view' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-vih_short_course_family-field_vih_schedule'
   $field_instances['node-vih_short_course_family-field_vih_schedule'] = array(
     'bundle' => 'vih_short_course_family',
@@ -5188,6 +5224,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5237,6 +5279,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5289,6 +5337,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5347,6 +5401,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5400,6 +5460,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5444,6 +5510,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 6,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5492,6 +5564,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5548,6 +5626,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'sidepicture',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
@@ -5625,6 +5709,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 9,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5676,6 +5766,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'file_default',
         'weight' => 3,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5724,6 +5820,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5776,6 +5878,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5834,6 +5942,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5887,6 +6001,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -5934,6 +6054,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -5998,6 +6124,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'image',
         'weight' => 0,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6058,6 +6190,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6125,6 +6263,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 11,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6183,6 +6327,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'pdf_reader_file',
         'weight' => 4,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6231,6 +6381,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6283,6 +6439,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6340,6 +6502,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 3,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6393,6 +6561,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6436,6 +6610,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'sidepicture',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
@@ -6517,6 +6697,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'pdf_reader_file',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6569,6 +6755,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 9,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6618,6 +6810,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6670,6 +6868,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6728,6 +6932,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 4,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6781,6 +6991,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -6828,6 +7044,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         ),
         'type' => 'commerce_cart_add_to_cart_form',
         'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -6885,6 +7107,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'sidepicture',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
@@ -6962,6 +7190,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 11,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -7017,6 +7251,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 2,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -7067,6 +7307,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'type' => 'file_default',
         'weight' => 6,
       ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -7115,6 +7361,12 @@ function vih_short_course_commerce_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -7166,6 +7418,12 @@ function vih_short_course_commerce_field_default_field_instances() {
           'image_style' => 'thumbnail',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'ical' => array(
