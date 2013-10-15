@@ -72,6 +72,23 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     }
   }
   
+  // Add prices to attribute selectors.
+  if (isset($form['attributes'])) {
+    $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
+    foreach (element_children($form['attributes']) as $field) {
+      foreach (field_get_items($form_state['context']['entity_type'], $entity, 'field_golf_product') as $product) {
+        $product = commerce_product_load($product['product_id']);
+        $attribute = reset(field_get_items('commerce_product', $product, $field));
+        $label = $attribute['label'];
+        $attribute = $attribute['value'];
+        $item = reset(field_get_items('commerce_product', $product, 'commerce_price'));
+        $price = commerce_currency_format($item['amount'], $item['currency_code'], $product);
+        $label = $form['attributes'][$field]['#options'][$attribute];
+        $form['attributes'][$field]['#options'][$attribute] = $label . ' (' . $price . ')';
+      }
+    }
+  }  
+  
   // Adding table with current people in the order.
   global $user;
   $order = commerce_cart_order_load($user->uid);
