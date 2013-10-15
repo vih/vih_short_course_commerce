@@ -167,7 +167,7 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_sommercamp' => array(
-      'name' => t('Kort kursus sommercamp'),
+      'name' => t('Short Course Summercamp'),
       'base' => 'node_content',
       'description' => t('Kursusbeskrivelse og tilmelding til <em>sommercamp</em> <strong>UDEN</strong> onlinebetaling.'),
       'has_title' => '1',
