@@ -265,7 +265,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -283,20 +283,26 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_cpr_nummer',
-    'label' => 'CPR-nummer (10 cifre)',
+    'label' => 'CPR-nummer',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -306,11 +312,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -646,7 +662,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -664,20 +680,26 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_cpr_nummer',
-    'label' => 'CPR-nummer (10 cifre)',
+    'label' => 'CPR-nummer',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -687,11 +709,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -1027,7 +1059,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1045,20 +1077,26 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_cpr_nummer',
-    'label' => 'CPR-nummer (10 cifre)',
+    'label' => 'CPR-nummer',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -1068,11 +1106,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -1564,7 +1612,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten har vi brug for alle 10 cifre i CPR-nummeret.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1587,15 +1635,21 @@ function vih_short_course_commerce_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -1605,11 +1659,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -2028,7 +2092,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2046,20 +2110,26 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_cpr_nummer',
-    'label' => 'CPR-nummer (10 cifre)',
+    'label' => 'CPR-nummer',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -2069,11 +2139,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -2409,7 +2489,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2427,20 +2507,26 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_cpr_nummer',
-    'label' => 'CPR-nummer (10 cifre)',
+    'label' => 'CPR-nummer',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'commerce_order_message' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 0,
           'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 0,
+          'panopoly_wysiwyg_text' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
             'filtered_html' => array(
               'weight' => 0,
             ),
@@ -2450,11 +2536,21 @@ function vih_short_course_commerce_field_default_field_instances() {
             'mailchimp_campaign' => array(
               'weight' => 0,
             ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
       ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -7449,8 +7545,9 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('Billede');
   t('Body');
   t('CPR-nummer');
-  t('CPR-nummer (10 cifre)');
   t('DGU-medlemsnummer');
+  t('Da kurset er støttet af staten har vi brug for alle 10 cifre i CPR-nummeret.');
+  t('Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.');
   t('Display path');
   t('Foredrag');
   t('Golf handicap');
