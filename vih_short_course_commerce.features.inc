@@ -145,7 +145,7 @@ function vih_short_course_commerce_node_info() {
     'vih_short_course_family' => array(
       'name' => t('Short Course Familiy'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Used for <em>family courses</em> where you have different age groups but no room types.'),
       'has_title' => '1',
       'title_label' => t('Titel'),
       'help' => '',
@@ -161,7 +161,7 @@ function vih_short_course_commerce_node_info() {
     'vih_short_course_kajak' => array(
       'name' => t('Short Course Kajak'),
       'base' => 'node_content',
-      'description' => t('Used for the kayak courses.'),
+      'description' => t('Used for the <em>kayak courses</em> where you should be able to rent a kayak and add your size for the wet suit.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -177,7 +177,7 @@ function vih_short_course_commerce_node_info() {
     'vih_short_course_sport_camp' => array(
       'name' => t('Short Course Sport Camp'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Used for <em>sport camps</em> where you need to choose your subjects when registering.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
