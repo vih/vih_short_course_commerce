@@ -39,6 +39,12 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $time = $entity->field_course_time[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
     $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
   }
+  elseif (!empty($entity->field_date[LANGUAGE_NONE][0]['value2'])) {
+    $timezone = $entity->field_date[LANGUAGE_NONE][0]['timezone'];
+    $timezone_db = $entity->field_date[LANGUAGE_NONE][0]['timezone_db'];
+    $time = $entity->field_date[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
+    $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
+  }
   $course_is_expired = isset($course_time) AND strtotime($course_time) < time();
   
   // Default values for the registration form.
@@ -48,12 +54,12 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   }
   $form['submit']['#value'] = t('Sign up');
 
-  // Checks whether the course has expired
+  // Checks whether the event has expired
   if ($course_is_expired) {
-    $form['expired_course']['#markup'] = '<div class="info">' .
-      t('This course has expired. You can browse our website for other courses') . '</div>';
+    $form['expired_event']['#markup'] = '<div class="info">' .
+      t('This event has expired. You can browse our website for other events.') . '</div>';
     unset($form['line_item_fields']);
-    $form['submit']['#value'] = t('Course has expired');
+    $form['submit']['#value'] = t('Event has expired');
   }
   // Checks whether current registration is i process on another course.
   elseif ($is_cart_products_available === FALSE AND !empty($cart_product_ids)) {
