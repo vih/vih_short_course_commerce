@@ -183,7 +183,7 @@ msgstr "Titel"
 
 #: vih_short_course_commerce.features.inc:146
 msgid "Short Course Familiy"
-msgstr ""
+msgstr "Kort kursus familie"
 
 #: vih_short_course_commerce.features.inc:148
 msgid "Used for <em>family courses</em> where you have different age groups but no room types."
@@ -328,19 +328,19 @@ msgstr "Tilmeld"
 
 #: vih_short_course_commerce.module:61
 msgid "This event has not been published. You can browse our website for other events."
-msgstr ""
+msgstr "Denne begivenhed er ikke publiceret. Du er velkommen til at klikke dig rundt for at finde andre aktuelle begivenheder."
 
 #: vih_short_course_commerce.module:63
 msgid "Event is unpublished"
-msgstr ""
+msgstr "Begivenhed er ikke publiceret"
 
 #: vih_short_course_commerce.module:69
 msgid "This event has expired. You can browse our website for other events."
-msgstr ""
+msgstr "Denne begivenhed er overstået. Du kan klikke dig rundt på vores site for at finde andre begivenheder."
 
 #: vih_short_course_commerce.module:71
 msgid "Event has expired"
-msgstr ""
+msgstr "Begivenheden er overstået"
 
 #: vih_short_course_commerce.module:77
 msgid "You have already started a registration. Please finish that registration before proceding. "
