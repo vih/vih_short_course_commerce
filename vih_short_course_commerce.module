@@ -45,8 +45,8 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $time = $entity->field_date[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
     $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
   }
-  $course_is_expired = !isset($course_time) AND strtotime($course_time) < time();
-  
+  $course_is_expired = (isset($course_time) AND strtotime($course_time) < time());
+
   // Default values for the registration form.
   if (!module_exists('views_content')) {
     $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
