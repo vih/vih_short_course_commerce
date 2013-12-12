@@ -1,0 +1,3 @@
+Title,SKU,Price,Stock status,Stock quantity
+Adult course,ADULT-COURSE,4000.00,1,50
+Adult course sold out,ADULT-COURSE-SOLDOUT,4000.00,1,0
