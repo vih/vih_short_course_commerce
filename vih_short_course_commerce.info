@@ -226,3 +226,5 @@ features[variable][] = node_submitted_vih_short_course_sommercamp
 features[variable][] = node_submitted_vih_short_course_sport_camp
 features[variable][] = node_submitted_vih_short_course_subject
 features[views_view][] = vih_short_course_sportcamp_subjects
+
+files[] = vih_short_course_commerce.migrate.inc

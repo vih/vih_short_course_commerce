@@ -7,6 +7,25 @@
 include_once('vih_short_course_commerce.features.inc');
 
 /**
+ * Implements hook_migrate_api().
+ */
+function vih_short_course_commerce_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'VIHShortCourse' => array('class_name' => 'VIHShortCourse'),
+    ),
+  );
+  $types = array(
+    'vih_short_course_basic',
+  );
+  foreach ($types as $type) {
+    $api['migrations']['VIHNode' . $type] = array('class_name' => 'VIHNode', 'type' => $type);
+  }
+  return $api;
+}
+
+/**
 * Implements hook_admin_paths().
 */
 function vih_short_course_commerce_admin_paths() {
