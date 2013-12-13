@@ -4,16 +4,17 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  vih_short_course_commerce.features.field.inc: n/a
-#  vih_short_course_commerce.features.inc: n/a
-#  vih_short_course_commerce.views_default.inc: n/a
+#  vih_short_course_commerce.features.field_instance.inc: n/a
 #  vih_short_course_commerce.module: n/a
+#  vih_short_course_commerce.views_default.inc: n/a
+#  vih_short_course_commerce.features.inc: n/a
 #  vih_short_course_commerce.info: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2012-10-09 13:41+0200\n"
+"POT-Creation-Date: 2013-10-21 19:19+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -22,280 +23,381 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: vih_short_course_commerce.features.field.inc:8836
+#: vih_short_course_commerce.features.field.inc:10809
+msgid "Adresse"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10810 vih_short_course_commerce.features.field_instance.inc:7544
 msgid "Aldersgruppe"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8837
+#: vih_short_course_commerce.features.field.inc:10811 vih_short_course_commerce.features.field_instance.inc:7545
 msgid "Billede"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8838
+#: vih_short_course_commerce.features.field.inc:10812 vih_short_course_commerce.features.field_instance.inc:7546
 msgid "Body"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8839
+#: vih_short_course_commerce.features.field.inc:10813 vih_short_course_commerce.features.field_instance.inc:7547
 msgid "CPR-nummer"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8840
+#: vih_short_course_commerce.features.field.inc:10814
+msgid "CPR-nummer (10 cifre)"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10815 vih_short_course_commerce.features.field_instance.inc:7548
 msgid "DGU-medlemsnummer"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8841
+#: vih_short_course_commerce.features.field.inc:10816 vih_short_course_commerce.features.field_instance.inc:7551
 msgid "Display path"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8842
-msgid "E-mail"
+#: vih_short_course_commerce.features.field.inc:10817 vih_short_course_commerce.features.field_instance.inc:7552
+msgid "Foredrag"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8843
+#: vih_short_course_commerce.features.field.inc:10818 vih_short_course_commerce.features.field_instance.inc:7553
 msgid "Golf handicap"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8844
+#: vih_short_course_commerce.features.field.inc:10819 vih_short_course_commerce.features.field_instance.inc:7554
 msgid "Golfbaner"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8845
+#: vih_short_course_commerce.features.field.inc:10820 vih_short_course_commerce.features.field_instance.inc:7555
 msgid "Hvis du ikke har et handicap skal du skrive 99."
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8846
+#: vih_short_course_commerce.features.field.inc:10821 vih_short_course_commerce.features.field_instance.inc:7556
+msgid "Idrætsspecialer"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10822 vih_short_course_commerce.features.field_instance.inc:7557
 msgid "Kajakleje"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8847
+#: vih_short_course_commerce.features.field.inc:10823 vih_short_course_commerce.features.field_instance.inc:7558
 msgid "Klub"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8848
+#: vih_short_course_commerce.features.field.inc:10824 vih_short_course_commerce.features.field_instance.inc:7559
 msgid "Kursusleder"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8849
+#: vih_short_course_commerce.features.field.inc:10825 vih_short_course_commerce.features.field_instance.inc:7560
 msgid "Kursustype"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8850
+#: vih_short_course_commerce.features.field.inc:10826 vih_short_course_commerce.features.field_instance.inc:7561
+msgid "Lager"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10827 vih_short_course_commerce.features.field_instance.inc:7562
 msgid "Navn"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8851
+#: vih_short_course_commerce.features.field.inc:10828 vih_short_course_commerce.features.field_instance.inc:7563
 msgid "Oprindelsesland"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8852
+#: vih_short_course_commerce.features.field.inc:10829
+msgid "Phone"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10830 vih_short_course_commerce.features.field_instance.inc:7564 vih_short_course_commerce.module:143
 msgid "Price"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8853
+#: vih_short_course_commerce.features.field.inc:10831 vih_short_course_commerce.features.field_instance.inc:7565
 msgid "Product"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8854
+#: vih_short_course_commerce.features.field.inc:10832 vih_short_course_commerce.features.field_instance.inc:7566 vih_short_course_commerce.views_default.inc:236
 msgid "Produkt"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8855
+#: vih_short_course_commerce.features.field.inc:10833 vih_short_course_commerce.features.field_instance.inc:7567
 msgid "Sambo"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8856
+#: vih_short_course_commerce.features.field.inc:10834 vih_short_course_commerce.features.field_instance.inc:7568
 msgid "Skema"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8857
+#: vih_short_course_commerce.features.field.inc:10835 vih_short_course_commerce.features.field_instance.inc:7569
 msgid "Subjects"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8858
+#: vih_short_course_commerce.features.field.inc:10836 vih_short_course_commerce.features.field_instance.inc:7570
 msgid "Tidspunkt"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8859
+#: vih_short_course_commerce.features.field.inc:10837 vih_short_course_commerce.features.field_instance.inc:7571
+msgid "Tilmelding"
+msgstr ""
+
+#: vih_short_course_commerce.features.field.inc:10838 vih_short_course_commerce.features.field_instance.inc:7572
 msgid "Total"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8860
+#: vih_short_course_commerce.features.field.inc:10839 vih_short_course_commerce.features.field_instance.inc:7573
 msgid "Underviser"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8861
+#: vih_short_course_commerce.features.field.inc:10840 vih_short_course_commerce.features.field_instance.inc:7574
 msgid "Unit price"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8862
+#: vih_short_course_commerce.features.field.inc:10841 vih_short_course_commerce.features.field_instance.inc:7575
 msgid "Værelse"
 msgstr ""
 
-#: vih_short_course_commerce.features.field.inc:8863
+#: vih_short_course_commerce.features.field.inc:10842 vih_short_course_commerce.features.field_instance.inc:7576
 msgid "Værelser"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:139
+#: vih_short_course_commerce.features.field_instance.inc:7549
+msgid "Da kurset er støttet af staten har vi brug for alle 10 cifre i CPR-nummeret."
+msgstr ""
+
+#: vih_short_course_commerce.features.field_instance.inc:7550
+msgid "Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:138
 msgid "Short Course Basic"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:141
-msgid "Used for short courses which does not use a special line item."
+#: vih_short_course_commerce.features.inc:140
+msgid "Use <em>short course basic</em> for courses where you need info about room type and social security number."
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:143;151;159;167;175;183;191
+#: vih_short_course_commerce.features.inc:142;158;166;182
 msgid "Title"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:147
-msgid "Short Course Family"
+#: vih_short_course_commerce.features.inc:146
+msgid "Short Course Familiy"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:155
+#: vih_short_course_commerce.features.inc:148
+msgid "Used for <em>family courses</em> where you have different age groups but no room types."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:150;174;190
+msgid "Titel"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:154
 msgid "Short Course Golf"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:157
+#: vih_short_course_commerce.features.inc:156
 msgid "Used for the golf courses."
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:163
+#: vih_short_course_commerce.features.inc:162
 msgid "Short Course Kajak"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:165
-msgid "Used for the kayak courses."
+#: vih_short_course_commerce.features.inc:164
+msgid "Used for the <em>kayak courses</em> where you should be able to rent a kayak and add your size for the wet suit."
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:171
-msgid "Short Course Sommercamp"
+#: vih_short_course_commerce.features.inc:170
+msgid "Short Course Summercamp"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:179
+#: vih_short_course_commerce.features.inc:172
+msgid "Kursusbeskrivelse og tilmelding til <em>sommercamp</em> <strong>UDEN</strong> onlinebetaling."
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:178
 msgid "Short Course Sport Camp"
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:187
-msgid "VIH Short Course Subject"
+#: vih_short_course_commerce.features.inc:180
+msgid "Used for <em>sport camps</em> where you need to choose your subjects when registering."
 msgstr ""
 
-#: vih_short_course_commerce.features.inc:189
+#: vih_short_course_commerce.features.inc:186
+msgid "Short Course Subject"
+msgstr ""
+
+#: vih_short_course_commerce.features.inc:188
 msgid "Subjects for the sportcamp."
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:94
+#: vih_short_course_commerce.views_default.inc:216
 msgid "Master"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:95
-msgid "more"
+#: vih_short_course_commerce.views_default.inc:217
+msgid "mere"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:96
-msgid "Apply"
+#: vih_short_course_commerce.views_default.inc:218
+msgid "Udfør"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:97
-msgid "Reset"
+#: vih_short_course_commerce.views_default.inc:219
+msgid "Gendan"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:98
-msgid "Sort by"
+#: vih_short_course_commerce.views_default.inc:220
+msgid "Sortér efter"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:99
-msgid "Asc"
+#: vih_short_course_commerce.views_default.inc:221
+msgid "Stigende"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:100
-msgid "Desc"
+#: vih_short_course_commerce.views_default.inc:222
+msgid "Faldende"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:101
-msgid "Items per page"
+#: vih_short_course_commerce.views_default.inc:223
+msgid "Antal elementer"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:102
-msgid "- All -"
+#: vih_short_course_commerce.views_default.inc:224
+msgid "- Alle -"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:103
-msgid "Offset"
+#: vih_short_course_commerce.views_default.inc:225
+msgid "Forskydning"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:104
-msgid "« first"
+#: vih_short_course_commerce.views_default.inc:226
+msgid "« første"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:105
-msgid "‹ previous"
+#: vih_short_course_commerce.views_default.inc:227
+msgid "‹ forrige"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:106
-msgid "next ›"
+#: vih_short_course_commerce.views_default.inc:228
+msgid "næste ›"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:107
-msgid "last »"
+#: vih_short_course_commerce.views_default.inc:229
+msgid "sidste »"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:108
-msgid "Content referencing Content from field_short_course_subjects"
+#: vih_short_course_commerce.views_default.inc:230
+msgid "Indhold refererer til Indhold fra field_short_course_subjects"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:109
-msgid "All"
+#: vih_short_course_commerce.views_default.inc:231
+msgid "Alle"
 msgstr ""
 
-#: vih_short_course_commerce.views_default.inc:110
+#: vih_short_course_commerce.views_default.inc:232
+msgid "Content pane"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:233
+msgid "Udgivet"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:234
+msgid "View panes"
+msgstr ""
+
+#: vih_short_course_commerce.views_default.inc:235
 msgid "Entity Reference"
 msgstr ""
 
-#: vih_short_course_commerce.module:16
-msgid "Short course"
+#: vih_short_course_commerce.views_default.inc:237
+msgid "Content pane 2"
 msgstr ""
 
-#: vih_short_course_commerce.module:17
-msgid "Defines a short course product that users can sign up for."
-msgstr ""
-
-#: vih_short_course_commerce.module:28;29
-msgid "Kayak fee"
-msgstr ""
-
-#: vih_short_course_commerce.module:71;82;92
+#: vih_short_course_commerce.module:53
+msgctxt "vih-registration"
 msgid "Registration"
 msgstr ""
 
-#: vih_short_course_commerce.module:72
-msgid "You have already started a registration. Please finish that registration before proceding. "
-msgstr ""
-
-#: vih_short_course_commerce.module:77
-msgid "Cannot sign up - please finish your other registration"
-msgstr ""
-
-#: vih_short_course_commerce.module:83
-msgid "You already added some people. Add more or "
-msgstr ""
-
-#: vih_short_course_commerce.module:88;94
+#: vih_short_course_commerce.module:56
 msgid "Sign up"
 msgstr ""
 
-#: vih_short_course_commerce.module:92
+#: vih_short_course_commerce.module:61
+msgid "This event has not been published. You can browse our website for other events."
+msgstr ""
+
+#: vih_short_course_commerce.module:63
+msgid "Event is unpublished"
+msgstr ""
+
+#: vih_short_course_commerce.module:69
+msgid "This event has expired. You can browse our website for other events."
+msgstr ""
+
+#: vih_short_course_commerce.module:71
+msgid "Event has expired"
+msgstr ""
+
+#: vih_short_course_commerce.module:77
+msgid "You have already started a registration. Please finish that registration before proceding. "
+msgstr ""
+
+#: vih_short_course_commerce.module:78
+msgid "Go to your current registration"
+msgstr ""
+
+#: vih_short_course_commerce.module:81
+msgid "Cannot sign up - please finish your other registration"
+msgstr ""
+
+#: vih_short_course_commerce.module:88
+msgid "You already added some people. Add more or "
+msgstr ""
+
+#: vih_short_course_commerce.module:89
+msgid "go to checkout"
+msgstr ""
+
+#: vih_short_course_commerce.module:95
 msgid "You can register as many people as you like. Add one at a time using the form below."
 msgstr ""
 
-#: vih_short_course_commerce.module:104
+#: vih_short_course_commerce.module:103
+msgid "No more empty slots of this type"
+msgstr ""
+
+#: vih_short_course_commerce.module:158
 msgid "Additional products"
 msgstr ""
 
-#: vih_short_course_commerce.module:115
-msgid "Do not rent kayak"
+#: vih_short_course_commerce.module:170
+msgid "No, thanks"
 msgstr ""
 
-#: vih_short_course_commerce.module:120
-msgid "Rent a kayak?"
+#: vih_short_course_commerce.module:176
+msgid "Do you want to rent a kayak?"
+msgstr ""
+
+#: vih_short_course_commerce.module:183
+msgid "Small"
+msgstr ""
+
+#: vih_short_course_commerce.module:184
+msgid "Medium"
+msgstr ""
+
+#: vih_short_course_commerce.module:185
+msgid "Large"
+msgstr ""
+
+#: vih_short_course_commerce.module:186
+msgid "X-Large"
+msgstr ""
+
+#: vih_short_course_commerce.module:191
+msgid "Size for wetsuit"
 msgstr ""
 
 #: vih_short_course_commerce.info:0
