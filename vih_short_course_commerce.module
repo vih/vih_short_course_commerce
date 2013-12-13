@@ -22,37 +22,78 @@ function vih_short_course_commerce_admin_paths() {
  * Implementation of hook_form_FORMID_alter().
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
+
   // Make sure that one product display has been registered before starting on a registration for a new product display.
   $entities = entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id']));
   $entity = $entities[$form_state['context']['entity_id']];
+
   $product_ids = vih_short_course_commerce_get_product_ids($entity);
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
   $is_cart_products_available = !empty($merged_ids);
+  $course_is_expired = FALSE;
+
+  // Checking for expired course.
+  if (!empty($entity->field_course_time[LANGUAGE_NONE][0]['value2'])) {
+    $timezone = $entity->field_course_time[LANGUAGE_NONE][0]['timezone'];
+    $timezone_db = $entity->field_course_time[LANGUAGE_NONE][0]['timezone_db'];
+    $time = $entity->field_course_time[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
+    $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
+  }
+  elseif (!empty($entity->field_date[LANGUAGE_NONE][0]['value2'])) {
+    $timezone = $entity->field_date[LANGUAGE_NONE][0]['timezone'];
+    $timezone_db = $entity->field_date[LANGUAGE_NONE][0]['timezone_db'];
+    $time = $entity->field_date[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
+    $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
+  }
+  $course_is_expired = (strtotime($course_time) < time());
+
+  // Default values for the registration form.
+  if (!module_exists('views_content')) {
+    $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
+    $form['cart_form_header']['#weight'] = -100;
+  }
   $form['submit']['#value'] = t('Sign up');
 
-  if ($is_cart_products_available === FALSE AND !empty($cart_product_ids)) {
-    $form['pending_order_msg']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2><div class="info">' .
+  // Checks whether event has been published
+  if ($entity->status == 0) {
+    $form['unpublished_event']['#markup'] = '<div class="info">' .
+      t('This event has not been published. You can browse our website for other events.') . '</div>';
+    unset($form['line_item_fields']);
+    $form['submit']['#value'] = t('Event is unpublished');
+    $form['submit']['#disabled'] = TRUE;
+  }
+  // Checks whether the event has expired
+  elseif ($course_is_expired) {
+    $form['expired_event']['#markup'] = '<div class="info">' .
+      t('This event has expired. You can browse our website for other events.') . '</div>';
+    unset($form['line_item_fields']);
+    $form['submit']['#value'] = t('Event has expired');
+    $form['submit']['#disabled'] = TRUE;
+  }
+  // Checks whether current registration is i process on another course.
+  elseif ($is_cart_products_available === FALSE AND !empty($cart_product_ids)) {
+    $form['pending_order_msg']['#markup'] = '<div class="info">' .
         t('You have already started a registration. Please finish that registration before proceding. ') . 
         l(t('Go to your current registration'), 'cart') . 
         '.</div>';
-    $form['pending_order_msg']['#weight'] = -100;  
+    $form['pending_order_msg']['#weight'] = -99;  
     $form['submit']['#value'] = t('Cannot sign up - please finish your other registration');
     $form['submit']['#disabled'] = TRUE;
     unset($form['line_item_fields']);
   }
+  // Checks whether a registration is in process on the current course.
   elseif ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
-    $form['pending_order_msg']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2><div class="info">' .
+    $form['pending_order_msg']['#markup'] = '<div class="info">' .
         t('You already added some people. Add more or ') . 
         l(t('go to checkout'), 'checkout') . 
         '.</div>';
-    $form['pending_order_msg']['#weight'] = -100;
-    $form['submit']['#value'] = t('Sign up');
+    $form['pending_order_msg']['#weight'] = -99;
   }
+  // Default settings.
   else {
-    $form['pending_order_msg']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2><p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
-    $form['pending_order_msg']['#weight'] = -100;
-    
+    $form['pending_order_msg']['#markup'] = '<p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
+    $form['pending_order_msg']['#weight'] = -99;
     if (module_exists('commerce_stock')) {
       $product = commerce_product_load($form['product_id']['#value']);
       $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
@@ -63,14 +104,25 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
           }
         }
       }   
-      else {    
-        $form['submit']['#value'] = t('Sign up');
-      }
-    }
-    else {
-      $form['submit']['#value'] = t('Sign up');
     }
   }
+  
+  // Add prices to attribute selectors.
+  if (isset($form['attributes'])) {
+    $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
+    foreach (element_children($form['attributes']) as $field) {
+      foreach (field_get_items($form_state['context']['entity_type'], $entity, 'field_golf_product') as $product) {
+        $product = commerce_product_load($product['product_id']);
+        $attribute = reset(field_get_items('commerce_product', $product, $field));
+        $label = $attribute['label'];
+        $attribute = $attribute['value'];
+        $item = reset(field_get_items('commerce_product', $product, 'commerce_price'));
+        $price = commerce_currency_format($item['amount'], $item['currency_code'], $product);
+        $label = $form['attributes'][$field]['#options'][$attribute];
+        $form['attributes'][$field]['#options'][$attribute] = $label . ' (' . $price . ')';
+      }
+    }
+  }  
   
   // Adding table with current people in the order.
   global $user;
@@ -97,7 +149,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   }
 
   // Kayak courses - add possiblity to rent a kayak.
-  if ($entity->type = 'vih_short_course_kajak') {
+  if (!$course_is_expired AND $entity->type = 'vih_short_course_kajak') {
   
     if (!empty($entity->field_rent_kayak)) {
 
