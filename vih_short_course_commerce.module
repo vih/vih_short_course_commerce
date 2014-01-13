@@ -316,3 +316,29 @@ function vih_short_course_commerce_views_default_views_alter(&$views) {
   unset($display->display_options['fields']['commerce_unit_price']);  
 }
 
+/**
+ * Get the list of options for the field_kayak_extra_choice field.
+ */
+function vih_short_course_kayak_extra_choice_options() {
+  // Use static cache for improved performance.
+  static $options = array();
+  if (!empty($options)) {
+    dpm($options);
+    return $options;
+  }
+
+  $products = commerce_product_load_multiple(FALSE, array('type' => 'vih_short_course_kayak'));
+  foreach ($products as $product) {
+    $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
+    foreach ($product_wrapper->field_kayak_extra_choices->value() as $choice) {
+      list($key, $value) = explode('|', $choice);
+      // If we have a value we also have a key.
+      if (!empty($value)) {
+        $options[$key] = $value;
+      }
+    }
+  }
+  dpm($options);
+
+  return $options;
+}
