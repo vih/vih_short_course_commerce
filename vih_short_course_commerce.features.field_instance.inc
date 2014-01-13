@@ -1689,6 +1689,40 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_line_item-vih_short_course_kayak-field_kayak_extra_choice'
+  $field_instances['commerce_line_item-vih_short_course_kayak-field_kayak_extra_choice'] = array(
+    'bundle' => 'vih_short_course_kayak',
+    'commerce_cart_settings' => array(
+      'field_access' => 1,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_kayak_extra_choice',
+    'label' => 'Extra choices',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 47,
+    ),
+  );
+
   // Exported field_instance: 'commerce_line_item-vih_short_course_kayak-field_registrant_name'
   $field_instances['commerce_line_item-vih_short_course_kayak-field_registrant_name'] = array(
     'bundle' => 'vih_short_course_kayak',
@@ -3357,7 +3391,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     'bundle' => 'vih_short_course_kayak',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Write values as key|value.',
     'display' => array(
       'add_to_cart_confirmation_view' => array(
         'label' => 'above',
@@ -3546,6 +3580,106 @@ function vih_short_course_commerce_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 45,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-vih_short_course_kayak-field_kayak_extra_choices'
+  $field_instances['commerce_product-vih_short_course_kayak-field_kayak_extra_choices'] = array(
+    'bundle' => 'vih_short_course_kayak',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'add_to_cart_confirmation_view' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'field_kayak_extra_choices',
+    'label' => 'Extra choices',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 'panopoly_html_text',
+          'panopoly_wysiwyg_text' => 'panopoly_wysiwyg_text',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 47,
     ),
   );
 
@@ -7707,6 +7841,7 @@ function vih_short_course_commerce_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A list of extra choices that is possible to select when purchasing the product.');
   t('Aldersgruppe');
   t('Billede');
   t('Body');
@@ -7715,6 +7850,7 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('Da kurset er støttet af staten har vi brug for alle 10 cifre i CPR-nummeret.');
   t('Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.');
   t('Display path');
+  t('Extra choices');
   t('Featured image');
   t('Foredrag');
   t('Golf handicap');
@@ -7742,6 +7878,7 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('Unit price');
   t('Værelse');
   t('Værelser');
+  t('Write values as key|value.');
 
   return $field_instances;
 }
