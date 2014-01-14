@@ -9,6 +9,13 @@
  */
 function vih_short_course_commerce_commerce_line_item_default_types() {
   $items = array(
+    'vih_kayak' => array(
+      'name' => 'VIH Kayak',
+      'description' => 'A customizable product line item type.',
+      'product' => TRUE,
+      'add_form_submit_value' => 'Tilføj vare',
+      'base' => 'commerce_product_line_item',
+    ),
     'vih_short_course' => array(
       'name' => 'VIH Short Course',
       'description' => 'A customizable product line item type.',

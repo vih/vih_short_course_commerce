@@ -650,5 +650,28 @@ function vih_short_course_commerce_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_wetsuit_size'
+  $field_bases['field_wetsuit_size'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_wetsuit_size',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   return $field_bases;
 }
