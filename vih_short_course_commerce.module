@@ -326,10 +326,10 @@ function vih_short_course_kayak_extra_choice_options() {
     return $options;
   }
 
-  $products = commerce_product_load_multiple(FALSE, array('type' => 'vih_short_course_kayak'));
-  foreach ($products as $product) {
-    $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
-    foreach ($product_wrapper->field_kayak_extra_choices->value() as $choice) {
+  $nodes = node_load_multiple(FALSE, array('type' => 'vih_short_course_kajak'));
+  foreach ($nodes as $node) {
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    foreach ($node_wrapper->field_kayak_extra_choices->value() as $choice) {
       list($key, $value) = explode('|', $choice);
       // If we have a value we also have a key.
       if (!empty($value)) {
@@ -344,24 +344,24 @@ function vih_short_course_kayak_extra_choice_options() {
 /**
  * Get the list of options for the field_kayak_extra_choice field for a specific product.
  */
-function vih_short_course_kayak_extra_choice_options_for_product($product_id) {
+function vih_short_course_kayak_extra_choice_options_for_node($nid) {
   // Use static cache for improved performance.
   static $options = array();
-  if (isset($options[$product_id])) {
-    return $options[$product_id];
+  if (isset($options[$nid])) {
+    return $options[$nid];
   }
 
-  $options[$product_id] = array();
-  $product_wrapper = entity_metadata_wrapper('commerce_product', $product_id);
-  foreach ($product_wrapper->field_kayak_extra_choices->value() as $choice) {
+  $options[$nid] = array();
+  $node_wrapper = entity_metadata_wrapper('node', $nid);
+  foreach ($node_wrapper->field_kayak_extra_choices->value() as $choice) {
     list($key, $value) = explode('|', $choice);
     // If we have a value we also have a key.
     if (!empty($value)) {
-      $options[$product_id][$key] = $value;
+      $options[$nid][$key] = $value;
     }
   }
 
-  return $options[$product_id];
+  return $options[$nid];
 }
 
 /**
@@ -370,13 +370,14 @@ function vih_short_course_kayak_extra_choice_options_for_product($product_id) {
 function vih_short_course_commerce_form_alter(&$form, &$form_state, $form_id) {
   if (strpos($form_id, 'commerce_cart_add_to_cart_form') !== FALSE) {
     // Handle single product values.
-    if (!empty($form['product_id']['#value'])) {
-      $options = vih_short_course_kayak_extra_choice_options_for_product($form['product_id']['#value']);
-      if (empty($options)) {
-        $form['line_item_fields']['field_kayak_extra_choice']['#access'] = FALSE;
+    $context = $form_state['context'];
+    if (!empty($context['entity_id']) && !empty($context['entity_type']) && $context['entity_type'] == 'node') {
+      $options = vih_short_course_kayak_extra_choice_options_for_node($context['entity_id']);
+      if (!empty($options)) {
+        $form['line_item_fields']['field_kayak_extra_choice']['und']['#options'] = $options;
       }
       else {
-        $form['line_item_fields']['field_kayak_extra_choice']['und']['#options'] = $options;
+        $form['line_item_fields']['field_kayak_extra_choice']['#access'] = FALSE;
       }
     }
   }

@@ -1710,7 +1710,7 @@ function vih_short_course_commerce_field_default_field_instances() {
     'entity_type' => 'commerce_line_item',
     'field_name' => 'field_kayak_extra_choice',
     'label' => 'Extra choices',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -3580,106 +3580,6 @@ function vih_short_course_commerce_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 45,
-    ),
-  );
-
-  // Exported field_instance: 'commerce_product-vih_short_course_kayak-field_kayak_extra_choices'
-  $field_instances['commerce_product-vih_short_course_kayak-field_kayak_extra_choices'] = array(
-    'bundle' => 'vih_short_course_kayak',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'add_to_cart_confirmation_view' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'line_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'node_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'commerce_product',
-    'field_name' => 'field_kayak_extra_choices',
-    'label' => 'Extra choices',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'commerce_order_message' => 'commerce_order_message',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'mailchimp_campaign' => 'mailchimp_campaign',
-          'panopoly_html_text' => 'panopoly_html_text',
-          'panopoly_wysiwyg_text' => 'panopoly_wysiwyg_text',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'commerce_order_message' => array(
-              'weight' => 0,
-            ),
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 1,
-            ),
-            'mailchimp_campaign' => array(
-              'weight' => 0,
-            ),
-            'panopoly_html_text' => array(
-              'weight' => -9,
-            ),
-            'panopoly_wysiwyg_text' => array(
-              'weight' => -10,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 47,
     ),
   );
 
@@ -6458,6 +6358,100 @@ function vih_short_course_commerce_field_default_field_instances() {
       ),
       'type' => 'inline_entity_form',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-vih_short_course_kajak-field_kayak_extra_choices'
+  $field_instances['node-vih_short_course_kajak-field_kayak_extra_choices'] = array(
+    'bundle' => 'vih_short_course_kajak',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Use the format: key|value for values.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_kayak_extra_choices',
+    'label' => 'Extra choices',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'commerce_order_message' => 'commerce_order_message',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'mailchimp_campaign' => 'mailchimp_campaign',
+          'panopoly_html_text' => 'panopoly_html_text',
+          'panopoly_wysiwyg_text' => 'panopoly_wysiwyg_text',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'commerce_order_message' => array(
+              'weight' => 0,
+            ),
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 1,
+            ),
+            'mailchimp_campaign' => array(
+              'weight' => 0,
+            ),
+            'panopoly_html_text' => array(
+              'weight' => -9,
+            ),
+            'panopoly_wysiwyg_text' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 14,
     ),
   );
 
