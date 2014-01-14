@@ -371,13 +371,15 @@ function vih_short_course_commerce_form_alter(&$form, &$form_state, $form_id) {
   if (strpos($form_id, 'commerce_cart_add_to_cart_form') !== FALSE) {
     // Handle single product values.
     $context = $form_state['context'];
-    if (!empty($context['entity_id']) && !empty($context['entity_type']) && $context['entity_type'] == 'node') {
-      $options = vih_short_course_kayak_extra_choice_options_for_node($context['entity_id']);
-      if (!empty($options)) {
-        $form['line_item_fields']['field_kayak_extra_choice']['und']['#options'] = $options;
-      }
-      else {
-        $form['line_item_fields']['field_kayak_extra_choice']['#access'] = FALSE;
+    if ($context['display']['settings']['line_item_type'] == 'vih_short_course_kayak') {
+      if (!empty($context['entity_id']) && !empty($context['entity_type']) && $context['entity_type'] == 'node') {
+        $options = vih_short_course_kayak_extra_choice_options_for_node($context['entity_id']);
+        if (!empty($options)) {
+          $form['line_item_fields']['field_kayak_extra_choice'][LANGUAGE_NONE]['#options'] = $options;
+        }
+        else {
+          $form['line_item_fields']['field_kayak_extra_choice']['#access'] = FALSE;
+        }
       }
     }
   }
