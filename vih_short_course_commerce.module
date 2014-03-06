@@ -315,32 +315,6 @@ function vih_short_course_commerce_views_default_views_alter(&$views) {
 }
 
 /**
- * Get the list of options for the field_kayak_extra_choice field.
- */
-function vih_short_course_kayak_extra_choice_options() {
-
-  // Use static cache for improved performance.
-  static $options = array();
-  if (!empty($options)) {
-    return $options;
-  }
-
-  $nodes = node_load_multiple(FALSE, array('type' => 'vih_short_course_kajak'));
-  foreach ($nodes as $node) {
-    $node_wrapper = entity_metadata_wrapper('node', $node);
-    foreach ($node_wrapper->field_kayak_extra_choices->value() as $choice) {
-      list($key, $value) = explode('|', $choice);
-      // If we have a value we also have a key.
-      if (!empty($value)) {
-        $options[$key] = $value;
-      }
-    }
-  }
-
-  return $options;
-}
-
-/**
  * Get the list of options for the field_kayak_extra_choice field for a specific product.
  */
 function vih_short_course_kayak_extra_choice_options_for_node($nid) {
