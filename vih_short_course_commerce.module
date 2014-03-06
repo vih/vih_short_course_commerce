@@ -24,8 +24,7 @@ function vih_short_course_commerce_admin_paths() {
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
 
   // Make sure that one product display has been registered before starting on a registration for a new product display.
-  $entities = entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id']));
-  $entity = $entities[$form_state['context']['entity_id']];
+  $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
 
   $product_ids = vih_short_course_commerce_get_product_ids($entity);
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
@@ -109,7 +108,6 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   
   // Add prices to attribute selectors.
   if (isset($form['attributes'])) {
-    $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
     foreach (element_children($form['attributes']) as $field) {
       foreach (field_get_items($form_state['context']['entity_type'], $entity, 'field_golf_product') as $product) {
         $product = commerce_product_load($product['product_id']);
@@ -320,6 +318,7 @@ function vih_short_course_commerce_views_default_views_alter(&$views) {
  * Get the list of options for the field_kayak_extra_choice field.
  */
 function vih_short_course_kayak_extra_choice_options() {
+
   // Use static cache for improved performance.
   static $options = array();
   if (!empty($options)) {
