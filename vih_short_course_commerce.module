@@ -147,7 +147,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   }
 
   // Kayak courses - add possiblity to rent a kayak.
-  if (!$course_is_expired AND $entity->type = 'vih_short_course_kajak') {
+  if (!$course_is_expired AND $entity->type == 'vih_short_course_kajak') {
   
     if (!empty($entity->field_rent_kayak)) {
 
