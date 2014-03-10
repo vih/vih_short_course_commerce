@@ -4624,6 +4624,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -4783,6 +4784,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -4864,6 +4866,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -5372,6 +5375,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -5913,6 +5917,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -6503,6 +6508,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -6991,6 +6997,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -7488,6 +7495,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -7799,6 +7807,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       'focus' => 0,
       'focus_lock_ratio' => 0,
       'focus_min_size' => '',
+      'focus_required' => 0,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -7835,7 +7844,6 @@ function vih_short_course_commerce_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('A list of extra choices that is possible to select when purchasing the product.');
   t('Aldersgruppe');
   t('Billede');
   t('Body');
@@ -7870,6 +7878,7 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('Total');
   t('Underviser');
   t('Unit price');
+  t('Use the format: key|value for values.');
   t('Værelse');
   t('Værelser');
   t('Write values as key|value.');
