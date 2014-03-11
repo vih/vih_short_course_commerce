@@ -302,16 +302,18 @@ function vih_short_course_commerce_get_products_in_cart() {
  * Implements hook_views_default_views_alter(&$views).
  */
 function vih_short_course_commerce_views_default_views_alter(&$views) {
-  $display =& $views['commerce_cart_form']->display['default'];
-  // Add the name field to the view.
-  $display->display_options['fields']['field_registrant_name']['id'] = 'field_registrant_name';
-  $display->display_options['fields']['field_registrant_name']['table'] = 'field_data_field_registrant_name';
-  $display->display_options['fields']['field_registrant_name']['field'] = 'field_registrant_name';
-  $display->display_options['fields']['field_registrant_name']['relationship'] = 'commerce_line_items_line_item_id';
+  if (isset($views['commerce_cart_form'])) {
+    $display =& $views['commerce_cart_form']->display['default'];
+    // Add the name field to the view.
+    $display->display_options['fields']['field_registrant_name']['id'] = 'field_registrant_name';
+    $display->display_options['fields']['field_registrant_name']['table'] = 'field_data_field_registrant_name';
+    $display->display_options['fields']['field_registrant_name']['field'] = 'field_registrant_name';
+    $display->display_options['fields']['field_registrant_name']['relationship'] = 'commerce_line_items_line_item_id';
 
-  // Remove quantity field and unit price.
-  unset($display->display_options['fields']['edit_quantity']);
-  unset($display->display_options['fields']['commerce_unit_price']);  
+    // Remove quantity field and unit price.
+    unset($display->display_options['fields']['edit_quantity']);
+    unset($display->display_options['fields']['commerce_unit_price']);  
+  }
 }
 
 /**
