@@ -30,13 +30,6 @@ function vih_short_course_commerce_commerce_line_item_default_types() {
       'add_form_submit_value' => 'Tilføj vare',
       'base' => 'commerce_product_line_item',
     ),
-    'vih_short_course_kayak' => array(
-      'name' => 'VIH Short Course Kayak',
-      'description' => 'A customizable product line item type.',
-      'product' => TRUE,
-      'add_form_submit_value' => 'Tilføj vare',
-      'base' => 'commerce_product_line_item',
-    ),
     'vih_short_course_sommercamp' => array(
       'name' => 'VIH Short Course Sommercamp',
       'description' => 'A customizable product line item type.',
@@ -60,13 +53,6 @@ function vih_short_course_commerce_commerce_line_item_default_types() {
  */
 function vih_short_course_commerce_commerce_product_default_types() {
   $items = array(
-    'vih_kayak' => array(
-      'type' => 'vih_kayak',
-      'name' => 'VIH Kayak',
-      'description' => '',
-      'help' => '',
-      'revision' => 1,
-    ),
     'vih_short_course_basic' => array(
       'type' => 'vih_short_course_basic',
       'name' => 'VIH Short Course Basic',
@@ -77,13 +63,6 @@ function vih_short_course_commerce_commerce_product_default_types() {
     'vih_short_course_family' => array(
       'type' => 'vih_short_course_family',
       'name' => 'VIH Short Course Family',
-      'description' => '',
-      'help' => '',
-      'revision' => 1,
-    ),
-    'vih_short_course_kayak' => array(
-      'type' => 'vih_short_course_kayak',
-      'name' => 'VIH Short Course Kayak',
       'description' => '',
       'help' => '',
       'revision' => 1,
@@ -154,14 +133,6 @@ function vih_short_course_commerce_node_info() {
       'name' => t('Short Course Golf'),
       'base' => 'node_content',
       'description' => t('Used for the golf courses.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'vih_short_course_kajak' => array(
-      'name' => t('Short Course Kajak'),
-      'base' => 'node_content',
-      'description' => t('Used for the <em>kayak courses</em> where you should be able to rent a kayak and add your size for the wet suit.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
