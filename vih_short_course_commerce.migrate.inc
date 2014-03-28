@@ -5,7 +5,7 @@
  *  Migrations for vih_short_course_commerce.
  */
 
-class VIHShortCourses extends Migration {
+class VIHShortCourseBasic extends VIHMigration {
 
   public function __construct() {
     parent::__construct();
@@ -97,7 +97,7 @@ class VIHNode extends DynamicMigration {
     $this->arguments = $arguments;
     parent::__construct();
     $this->description = t('Import course nodes.');
-    $this->dependencies = array('VIHShortCourses');
+    $this->dependencies = array('VIHShortCourseBasic');
 
     // Create a map object for tracking the relationships between source rows
     $this->map = new MigrateSQLMap($this->machineName,
