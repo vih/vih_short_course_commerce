@@ -112,7 +112,7 @@ function vih_short_course_commerce_node_info() {
       'base' => 'node_content',
       'description' => t('Used for <em>family courses</em> where you have different age groups but no room types.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'vih_short_course_sommercamp' => array(
@@ -120,7 +120,7 @@ function vih_short_course_commerce_node_info() {
       'base' => 'node_content',
       'description' => t('Kursusbeskrivelse og tilmelding til <em>sommercamp</em> <strong>UDEN</strong> onlinebetaling.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'vih_short_course_sport_camp' => array(
@@ -136,7 +136,7 @@ function vih_short_course_commerce_node_info() {
       'base' => 'node_content',
       'description' => t('Subjects for the sportcamp.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );
