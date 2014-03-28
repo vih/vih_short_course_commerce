@@ -411,6 +411,15 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view any commerce_customer_profile entity of bundle billing'.
+  $permissions['view any commerce_customer_profile entity of bundle billing'] = array(
+    'name' => 'view any commerce_customer_profile entity of bundle billing',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'commerce_customer',
+  );
+
   // Exported permission: 'view any commerce_product entity of bundle vih_short_course_basic'.
   $permissions['view any commerce_product entity of bundle vih_short_course_basic'] = array(
     'name' => 'view any commerce_product entity of bundle vih_short_course_basic',

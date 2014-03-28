@@ -86,6 +86,7 @@ features[defaultconfig][] = user_default_permissions:edit own vih_short_course_f
 features[defaultconfig][] = user_default_permissions:edit own vih_short_course_sommercamp content
 features[defaultconfig][] = user_default_permissions:edit own vih_short_course_sport_camp content
 features[defaultconfig][] = user_default_permissions:edit own vih_short_course_subject content
+features[defaultconfig][] = user_default_permissions:view any commerce_customer_profile entity of bundle billing
 features[defaultconfig][] = user_default_permissions:view any commerce_product entity of bundle vih_short_course_basic
 features[defaultconfig][] = user_default_permissions:view any commerce_product entity of bundle vih_short_course_family
 features[defaultconfig][] = user_default_permissions:view any commerce_product entity of bundle vih_short_course_sommercamp
