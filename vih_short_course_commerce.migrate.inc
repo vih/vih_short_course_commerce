@@ -136,6 +136,7 @@ class VIHNode extends DynamicMigration {
     $this->addFieldMapping('field_gender:create_term')
       ->defaultValue(TRUE);
     */
+
     $this->addFieldMapping('field_golf_product', 'skus');
   }
 
@@ -176,4 +177,3 @@ class VIHNode extends DynamicMigration {
     variable_set('menu_rebuild_needed', FALSE);
   }
 }
-

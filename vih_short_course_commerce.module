@@ -13,16 +13,27 @@ function vih_short_course_commerce_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
+<<<<<<< HEAD
       'VIHShortCourseBasic' => array('class_name' => 'VIHShortCourseBasic'),
     ),
   );
   $types = array(
     'short_course_basic',
+=======
+      'VIHShortCourse' => array('class_name' => 'VIHShortCourse'),
+    ),
+  );
+  $types = array(
+    'vih_short_course_basic',
+>>>>>>> 77cbe99c77eabb4ad0698f50e7f83967049b70a2
   );
   foreach ($types as $type) {
     $api['migrations']['VIHNode' . $type] = array('class_name' => 'VIHNode', 'type' => $type);
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 77cbe99c77eabb4ad0698f50e7f83967049b70a2
   return $api;
 }
 
