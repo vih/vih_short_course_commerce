@@ -76,13 +76,13 @@ class VIHShortCourseBasic extends VIHMigration {
     return $columns;
   }
 
-  /*
   function fields() {
+    /*
     return array(
       'product_images' => 'An array of images, populated during prepareRow().',
     );
+    */
   }
-  */
 
   function prepareRow($row) {
     //$row->product_images = explode(', ', $row->images);
@@ -136,7 +136,7 @@ class VIHNode extends DynamicMigration {
     $this->addFieldMapping('field_gender:create_term')
       ->defaultValue(TRUE);
     */
-    $this->addFieldMapping('field_product', 'skus');
+    $this->addFieldMapping('field_golf_product', 'skus');
   }
 
   public function prepareRow($row) {

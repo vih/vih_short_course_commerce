@@ -22,7 +22,6 @@ function vih_short_course_commerce_migrate_api() {
   foreach ($types as $type) {
     $api['migrations']['VIHNode' . $type] = array('class_name' => 'VIHNode', 'type' => $type);
   }
-  $api = array();
 
   return $api;
 }
