@@ -108,7 +108,7 @@ function vih_short_course_commerce_node_info() {
       'help' => '',
     ),
     'vih_short_course_family' => array(
-      'name' => t('Short Course Familiy'),
+      'name' => t('Short Course Family'),
       'base' => 'node_content',
       'description' => t('Used for <em>family courses</em> where you have different age groups but no room types.'),
       'has_title' => '1',
