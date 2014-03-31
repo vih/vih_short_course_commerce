@@ -24,7 +24,7 @@ class VIHShortCourseBasic extends VIHMigration {
     );
 
     // Create a MigrateSource object.
-    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'vih_short_course_commerce') . '/import/short_courses.csv', $this->csvcolumns(), array('header_rows' => 1), $this->fields());
+    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'vih_short_course_commerce') . '/import/short_courses_basic.csv', $this->csvcolumns(), array('header_rows' => 1), $this->fields());
 
     $this->destination = new MigrateDestinationEntityAPI('commerce_product', 'vih_short_course_basic');
 
