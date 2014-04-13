@@ -5,7 +5,7 @@
  *  Migrations for vih_short_course_commerce.
  */
 
-class VIHShortCourseBasic extends VIHMigration {
+class VIHShortCourseBasicProduct extends VIHMigration {
 
   public function __construct() {
     parent::__construct();
@@ -31,6 +31,7 @@ class VIHShortCourseBasic extends VIHMigration {
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('sku', 'sku');
     $this->addFieldMapping('commerce_price', 'price');
+    $this->addFieldMapping('field_room', 'room');
 
     /*
     // Size
@@ -69,6 +70,7 @@ class VIHShortCourseBasic extends VIHMigration {
     $columns[2] = array('price', 'Price');
     $columns[3] = array('stock_status', 'Stock status');
     $columns[4] = array('stock_quantity', 'Stock quantity');
+    $columns[5] = array('room', 'Room');
     /*
     $columns[5] = array('images', 'Images');
     $columns[6] = array('hexadecimal', 'Hexadecimal');
@@ -91,13 +93,13 @@ class VIHShortCourseBasic extends VIHMigration {
   }
 }
 
-class VIHNode extends DynamicMigration {
+class VIHShortCourseBasicNode extends VIHMigration {
 
   public function __construct(array $arguments) {
     $this->arguments = $arguments;
     parent::__construct();
     $this->description = t('Import course nodes.');
-    $this->dependencies = array('VIHShortCourseBasic');
+    $this->dependencies = array('VIHShortCourseBasicProduct');
 
     // Create a map object for tracking the relationships between source rows
     $this->map = new MigrateSQLMap($this->machineName,
@@ -112,21 +114,26 @@ class VIHNode extends DynamicMigration {
     );
 
     // Create a MigrateSource object.
-    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'vih_short_course_commerce') . '/import/product_display_' . $arguments['type'] . '.csv', $this->csvcolumns(), array('header_rows' => 1));
+    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'vih_short_course_commerce') . '/import/product_display_short_course_basic.csv', $this->csvcolumns(), array('header_rows' => 1));
 
-    $this->destination = new MigrateDestinationNode($arguments['type']);
+    $this->destination = new MigrateDestinationNode('short_course_basic');
 
     $this->addFieldMapping('uid', 'uid')->defaultValue(1);
 
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'description');
+    $this->addFieldMapping('field_course_time', 'date_from');
+    $this->addFieldMapping('field_course_time:to', 'date_to');
+
+    $this->addFieldMapping('field_course_leader', 'teacher_reference')
+      ->sourceMigration('VIHEmployeesContext');
+
+    $this->addFieldMapping('field_short_course_lecture', 'lectures')
+      ->sourceMigration('VIHLecturesNode');
     /*
     $this->addFieldMapping('body:summary', 'excerpt');
     $this->addFieldMapping('field_brand', 'brand');
     $this->addFieldMapping('field_brand:create_term')
-      ->defaultValue(TRUE);
-    $this->addFieldMapping('field_category', 'category');
-    $this->addFieldMapping('field_category:create_term')
       ->defaultValue(TRUE);
     $this->addFieldMapping('field_collection', 'collection')
           ->separator(', ');
@@ -137,10 +144,37 @@ class VIHNode extends DynamicMigration {
       ->defaultValue(TRUE);
     */
 
+    $this->addFieldMapping('field_course_type', 'course_type');
+    $this->addFieldMapping('field_course_type:create_term')
+      ->defaultValue(TRUE);
+
+    // Images
+    $this->addFieldMapping('field_pictures', 'all_images');
+    $this->addFieldMapping('field_pictures:file_replace')
+      ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_pictures:source_dir')
+      ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
+
+    // Featured image
+    $this->addFieldMapping('field_featured_image', 'featured_image');
+    $this->addFieldMapping('field_featured_image:file_replace')
+      ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_featured_image:source_dir')
+      ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
+
+    // Featured image
+    $this->addFieldMapping('field_picture', 'featured_image');
+    $this->addFieldMapping('field_picture:file_replace')
+      ->defaultValue(FILE_EXISTS_REPLACE);
+    $this->addFieldMapping('field_picture:source_dir')
+      ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
+
+    // Connect the products
     $this->addFieldMapping('field_golf_product', 'skus');
   }
 
   public function prepareRow($row) {
+    $row->all_images = explode(',', $row->images);
     $products = array();
     foreach(explode(', ', $row->sku) as $sku) {
       $product = commerce_product_load_by_sku($sku);
@@ -151,29 +185,22 @@ class VIHNode extends DynamicMigration {
 
   function csvcolumns() {
     $columns[0] = array('title', 'Title');
-    $columns[1] = array('description', 'Description');
+    $columns[1] = array('date_from', 'Date From');
+    $columns[2] = array('date_to', 'Date To');
+    $columns[3] = array('description', 'Description');
     /*
     $columns[2] = array('collection', 'Collection');
     $columns[3] = array('category', 'Category');
     $columns[4] = array('gender', 'Gender');
     $columns[5] = array('brand', 'Brand');
     */
-    $columns[2] = array('sku', 'SKU');
-    $columns[3] = array('product', 'Product');
+    $columns[4] = array('sku', 'SKU');
+    $columns[5] = array('product', 'Product');
+    $columns[6] = array('featured_image', 'Featured Image');
+    $columns[7] = array('images', 'Images');
+    $columns[8] = array('teacher_reference', 'Teacher');
+    $columns[9] = array('lectures', 'Lectures');
+    $columns[10] = array('course_type', 'Course Type');
     return $columns;
-  }
-
-  /**
-   * Construct the machine name from the source file name.
-   */
-  protected function generateMachineName($class_name = NULL) {
-    return drupal_strtolower('VIHNode' . $this->arguments['type']);
-  }
-
-  public function processImport(array $options = array()) {
-    parent::processImport($options);
-    // Do not force menu rebuilding. Otherwise pathauto will try to rebuild
-    // in each node_insert invocation.
-    variable_set('menu_rebuild_needed', FALSE);
   }
 }

@@ -13,15 +13,10 @@ function vih_short_course_commerce_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
-      'VIHShortCourseBasic' => array('class_name' => 'VIHShortCourseBasic'),
+      'VIHShortCourseBasicProduct' => array('class_name' => 'VIHShortCourseBasicProduct'),
+      'VIHShortCourseBasicNode' => array('class_name' => 'VIHShortCourseBasicNode'),
     ),
   );
-  $types = array(
-    'vih_short_course_basic',
-  );
-  foreach ($types as $type) {
-    $api['migrations']['VIHNode' . $type] = array('class_name' => 'VIHNode', 'type' => $type);
-  }
 
   return $api;
 }
