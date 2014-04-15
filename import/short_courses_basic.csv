@@ -1,0 +1,4 @@
+Title,SKU,Price,Stock status,Stock quantity,Room
+Basic course,BASIC-COURSE,4000.00,1,50,single
+Basic course sold out,BASIC-COURSE-SOLDOUT,4000.00,1,0,single
+Basic course expired,BASIC-COURSE-EXPIRED,4000.00,1,50,single

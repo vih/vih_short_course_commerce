@@ -7,6 +7,23 @@
 include_once('vih_short_course_commerce.features.inc');
 
 /**
+ * Implements hook_migrate_api().
+ */
+function vih_short_course_commerce_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'VIHShortCourseBasicProduct' => array('class_name' => 'VIHShortCourseBasicProduct'),
+      'VIHShortCourseBasicNode' => array('class_name' => 'VIHShortCourseBasicNode'),
+      'VIHShortCourseFamilyProduct' => array('class_name' => 'VIHShortCourseFamilyProduct'),
+      'VIHShortCourseFamilyNode' => array('class_name' => 'VIHShortCourseFamilyNode'),
+    ),
+  );
+
+  return $api;
+}
+
+/**
 * Implements hook_admin_paths().
 */
 function vih_short_course_commerce_admin_paths() {
