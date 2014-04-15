@@ -1,0 +1,4 @@
+Title,SKU,Price,Stock status,Stock quantity,Room
+Adult course,ADULT-COURSE,4000.00,1,50,single
+Adult course sold out,ADULT-COURSE-SOLDOUT,4000.00,1,0,single
+Adult course expired,ADULT-COURSE-EXPIRED,4000.00,1,50,single
