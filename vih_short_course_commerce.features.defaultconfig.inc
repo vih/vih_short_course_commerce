@@ -480,16 +480,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
-  // Exported permission: 'view own commerce_product entities of bundle vih_short_course_sommercamp'.
-  $permissions['view own commerce_product entities of bundle vih_short_course_sommercamp'] = array(
-    'name' => 'view own commerce_product entities of bundle vih_short_course_sommercamp',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'commerce_product',
-  );
-
   // Exported permission: 'view own commerce_product entities of bundle vih_short_course_sportcamp'.
   $permissions['view own commerce_product entities of bundle vih_short_course_sportcamp'] = array(
     'name' => 'view own commerce_product entities of bundle vih_short_course_sportcamp',

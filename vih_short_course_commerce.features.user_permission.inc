@@ -54,17 +54,6 @@ function vih_short_course_commerce_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create vih_short_course_sommercamp content'.
-  $permissions['create vih_short_course_sommercamp content'] = array(
-    'name' => 'create vih_short_course_sommercamp content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create vih_short_course_sport_camp content'.
   $permissions['create vih_short_course_sport_camp content'] = array(
     'name' => 'create vih_short_course_sport_camp content',
@@ -128,16 +117,6 @@ function vih_short_course_commerce_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any vih_short_course_sommercamp content'.
-  $permissions['delete any vih_short_course_sommercamp content'] = array(
-    'name' => 'delete any vih_short_course_sommercamp content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any vih_short_course_sport_camp content'.
   $permissions['delete any vih_short_course_sport_camp content'] = array(
     'name' => 'delete any vih_short_course_sport_camp content',
@@ -193,17 +172,6 @@ function vih_short_course_commerce_user_default_permissions() {
   // Exported permission: 'delete own vih_short_course_kajak content'.
   $permissions['delete own vih_short_course_kajak content'] = array(
     'name' => 'delete own vih_short_course_kajak content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own vih_short_course_sommercamp content'.
-  $permissions['delete own vih_short_course_sommercamp content'] = array(
-    'name' => 'delete own vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
@@ -278,17 +246,6 @@ function vih_short_course_commerce_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any vih_short_course_sommercamp content'.
-  $permissions['edit any vih_short_course_sommercamp content'] = array(
-    'name' => 'edit any vih_short_course_sommercamp content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any vih_short_course_sport_camp content'.
   $permissions['edit any vih_short_course_sport_camp content'] = array(
     'name' => 'edit any vih_short_course_sport_camp content',
@@ -347,17 +304,6 @@ function vih_short_course_commerce_user_default_permissions() {
   // Exported permission: 'edit own vih_short_course_kajak content'.
   $permissions['edit own vih_short_course_kajak content'] = array(
     'name' => 'edit own vih_short_course_kajak content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own vih_short_course_sommercamp content'.
-  $permissions['edit own vih_short_course_sommercamp content'] = array(
-    'name' => 'edit own vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
