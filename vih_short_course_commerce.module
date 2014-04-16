@@ -43,13 +43,8 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   // Make sure that one product display has been registered before starting on a registration for a new product display.
   $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
 
-  $product_ids = vih_short_course_commerce_get_product_ids($entity);
-  $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
-  $merged_ids = array_intersect($cart_product_ids, $product_ids);
-  $is_cart_products_available = !empty($merged_ids);
-
   // Default values for the registration form.
-  if (!module_exists('page_manager') || !page_manager_get_current_page()) {
+  if (!module_exists('panels') || !panels_get_current_page_display()) {
     $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
     $form['cart_form_header']['#weight'] = -100;
   }
@@ -63,6 +58,17 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['submit']['#value'] = t('Event is unpublished');
     $form['submit']['#disabled'] = TRUE;
   }
+  // Checks whether current registration is i process on another course.
+  elseif (_vih_commerce_registration_in_progress_on_other_course($entity)) {
+    $form['pending_order_msg']['#markup'] = '<div class="info">' .
+      t('You have already started a registration. Please finish that registration before proceding. ') .
+      l(t('Go to your current registration'), 'cart') .
+      '.</div>';
+    $form['pending_order_msg']['#weight'] = -99;
+    $form['submit']['#value'] = t('Cannot sign up - please finish your other registration');
+    $form['submit']['#disabled'] = TRUE;
+    unset($form['line_item_fields']);
+  }
   // Checks whether the event has expired
   elseif (_vih_commerce_is_expired($entity)) {
     $form['expired_event']['#markup'] = '<div class="info">' .
@@ -71,19 +77,8 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['submit']['#value'] = t('Event has expired');
     $form['submit']['#disabled'] = TRUE;
   }
-  // Checks whether current registration is i process on another course.
-  elseif ($is_cart_products_available === FALSE AND !empty($cart_product_ids)) {
-    $form['pending_order_msg']['#markup'] = '<div class="info">' .
-        t('You have already started a registration. Please finish that registration before proceding. ') . 
-        l(t('Go to your current registration'), 'cart') . 
-        '.</div>';
-    $form['pending_order_msg']['#weight'] = -99;  
-    $form['submit']['#value'] = t('Cannot sign up - please finish your other registration');
-    $form['submit']['#disabled'] = TRUE;
-    unset($form['line_item_fields']);
-  }
   // Checks whether a registration is in process on the current course.
-  elseif ($is_cart_products_available === TRUE AND !empty($cart_product_ids)) {
+  elseif (_vih_commerce_registration_in_progress_on_current_course($entity)) {
     $form['pending_order_msg']['#markup'] = '<div class="info">' .
         t('You already added some people. Add more or ') . 
         l(t('go to checkout'), 'checkout') . 
@@ -92,11 +87,15 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   }
   // Default settings.
   else {
-    $form['pending_order_msg']['#markup'] = '<p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
-    $form['pending_order_msg']['#weight'] = -99;
     if (_vih_commerce_is_out_of_stock($form['product_id']['#value'])) {
+      $form['pending_order_msg']['#markup'] = '<p>' . t('No more empty slots for this event. Contact us for information about a waiting list.') . '</p>';
+      $form['pending_order_msg']['#weight'] = -99;
       $form['submit']['#value'] = t('No more empty slots of this type');
       unset($form['line_item_fields']);
+    }
+    else {
+      $form['pending_order_msg']['#markup'] = '<p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
+      $form['pending_order_msg']['#weight'] = -99;
     }
   }
   
@@ -155,58 +154,4 @@ function vih_short_course_commerce_add_to_cart_form_submit_before($form, &$form_
   if (!empty($order)) {
     // Add some logic to ensure that the cart will not be filled up with rented kayaks.
   }
-}
-
-/**
- * Finds product IDs for the particular product display in the add to cart form
- *
- * @param
- *  An entity with a product field
- *
- * @return
- *  An array of product ids
- */
-function vih_short_course_commerce_get_product_ids($entity) {
-  if (!empty($entity->field_golf_product[LANGUAGE_NONE])) {
-    $products = $entity->field_golf_product[LANGUAGE_NONE];
-  }
-  elseif(!empty($entity->field_product[LANGUAGE_NONE])) {
-    $products = $entity->field_product[LANGUAGE_NONE];
-  }
-  else {
-    return array();
-  }
-
-  $ids = array();
-  foreach ($products as $a) {
-    $ids[] = $a['product_id'];
-  }
-  return $ids;
-}
-
-/**
- * Return the product_id values for all products in the cart
- *
- * @return
- *  An array of product ids
- */
-function vih_short_course_commerce_get_products_in_cart() {
-  $cart_product_ids = &drupal_static(__FUNCTION__);
-
-  if (!isset($cart_product_ids)) {
-    global $user;
-    $cart_product_ids = array();
-    $order = commerce_cart_order_load($user->uid);
-    if ($order) {
-      $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
-      foreach ($order_wrapper->commerce_line_items as $delta => $line_item_wrapper) {
-        $product_wrapper = $line_item_wrapper->commerce_product;
-        $cart_product_ids[] = $product_wrapper->product_id->value();
-      }
-    }
-
-    $cart_product_ids = array_unique($cart_product_ids);
-  }
-
-  return $cart_product_ids;
 }
