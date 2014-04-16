@@ -117,6 +117,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
         if (!(isset($product_wrapper->commerce_stock_override) && $product_wrapper->commerce_stock_override->value() == 1)) {
           if ($product_wrapper->commerce_stock->value() <= 0) {
             $form['submit']['#value'] = t('No more empty slots of this type');
+            unset($form['line_item_fields']);
           }
         }
       }   
