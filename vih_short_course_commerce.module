@@ -47,6 +47,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
   $is_cart_products_available = !empty($merged_ids);
+  /*
   $course_is_expired = FALSE;
 
   // Checking for expired course.
@@ -63,7 +64,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
   }
   $course_is_expired = (strtotime($course_time) < time());
-
+  */
   // Default values for the registration form.
   if (!module_exists('page_manager') || !page_manager_get_current_page()) {
     $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
@@ -80,7 +81,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['submit']['#disabled'] = TRUE;
   }
   // Checks whether the event has expired
-  elseif ($course_is_expired) {
+  elseif (_vih_commerce_is_expired($entity)) {
     $form['expired_event']['#markup'] = '<div class="info">' .
       t('This event has expired. You can browse our website for other events.') . '</div>';
     unset($form['line_item_fields']);
@@ -110,17 +111,9 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   else {
     $form['pending_order_msg']['#markup'] = '<p>' . t('You can register as many people as you like. Add one at a time using the form below.') . '</p>';
     $form['pending_order_msg']['#weight'] = -99;
-    if (module_exists('commerce_stock')) {
-      $product = commerce_product_load($form['product_id']['#value']);
-      $product_wrapper = entity_metadata_wrapper('commerce_product', $product);
-      if (isset($product_wrapper->commerce_stock) ){
-        if (!(isset($product_wrapper->commerce_stock_override) && $product_wrapper->commerce_stock_override->value() == 1)) {
-          if ($product_wrapper->commerce_stock->value() <= 0) {
-            $form['submit']['#value'] = t('No more empty slots of this type');
-            unset($form['line_item_fields']);
-          }
-        }
-      }   
+    if (_vih_commerce_is_out_of_stock($form['product_id']['#value'])) {
+      $form['submit']['#value'] = t('No more empty slots of this type');
+      unset($form['line_item_fields']);
     }
   }
   
