@@ -47,24 +47,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   $cart_product_ids = vih_short_course_commerce_get_products_in_cart();
   $merged_ids = array_intersect($cart_product_ids, $product_ids);
   $is_cart_products_available = !empty($merged_ids);
-  /*
-  $course_is_expired = FALSE;
 
-  // Checking for expired course.
-  if (!empty($entity->field_course_time[LANGUAGE_NONE][0]['value2'])) {
-    $timezone = $entity->field_course_time[LANGUAGE_NONE][0]['timezone'];
-    $timezone_db = $entity->field_course_time[LANGUAGE_NONE][0]['timezone_db'];
-    $time = $entity->field_course_time[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
-    $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
-  }
-  elseif (!empty($entity->field_date[LANGUAGE_NONE][0]['value2'])) {
-    $timezone = $entity->field_date[LANGUAGE_NONE][0]['timezone'];
-    $timezone_db = $entity->field_date[LANGUAGE_NONE][0]['timezone_db'];
-    $time = $entity->field_date[LANGUAGE_NONE][0]['value2'] . ' ' . $timezone_db;
-    $course_time = format_date(strtotime($time), 'custom', 'Y-m-d H:i:s', $timezone);
-  }
-  $course_is_expired = (strtotime($course_time) < time());
-  */
   // Default values for the registration form.
   if (!module_exists('page_manager') || !page_manager_get_current_page()) {
     $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
@@ -156,6 +139,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
       '#suffix' => '</div>',
     );
   }
+  array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
 }
 
 /**
