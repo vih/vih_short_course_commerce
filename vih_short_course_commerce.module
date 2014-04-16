@@ -65,7 +65,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   $course_is_expired = (strtotime($course_time) < time());
 
   // Default values for the registration form.
-  if (!module_exists('views_content')) {
+  if (!module_exists('page_manager') || !page_manager_get_current_page()) {
     $form['cart_form_header']['#markup'] = '<h2 id="add-to-cart-form-registration">' . t('Registration', array(), array('context' => 'vih-registration')) . '</h2>';
     $form['cart_form_header']['#weight'] = -100;
   }
