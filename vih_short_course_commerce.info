@@ -85,6 +85,7 @@ features[defaultconfig][] = user_default_permissions:view any commerce_product e
 features[defaultconfig][] = user_default_permissions:view own commerce_product entities of bundle vih_short_course_basic
 features[defaultconfig][] = user_default_permissions:view own commerce_product entities of bundle vih_short_course_family
 features[defaultconfig][] = user_default_permissions:view own commerce_product entities of bundle vih_short_course_sportcamp
+features[features_api][] = api:2
 features[field_base][] = field_agegroup
 features[field_base][] = field_country_of_origin
 features[field_base][] = field_cpr_nummer
