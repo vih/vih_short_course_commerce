@@ -41,16 +41,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
-  // Exported permission: 'create commerce_product entities of bundle vih_short_course_sommercamp'.
-  $permissions['create commerce_product entities of bundle vih_short_course_sommercamp'] = array(
-    'name' => 'create commerce_product entities of bundle vih_short_course_sommercamp',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'commerce_product',
-  );
-
   // Exported permission: 'create commerce_product entities of bundle vih_short_course_sportcamp'.
   $permissions['create commerce_product entities of bundle vih_short_course_sportcamp'] = array(
     'name' => 'create commerce_product entities of bundle vih_short_course_sportcamp',
@@ -75,17 +65,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
   // Exported permission: 'create vih_short_course_family content'.
   $permissions['create vih_short_course_family content'] = array(
     'name' => 'create vih_short_course_family content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create vih_short_course_sommercamp content'.
-  $permissions['create vih_short_course_sommercamp content'] = array(
-    'name' => 'create vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
@@ -136,16 +115,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any vih_short_course_sommercamp content'.
-  $permissions['delete any vih_short_course_sommercamp content'] = array(
-    'name' => 'delete any vih_short_course_sommercamp content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any vih_short_course_sport_camp content'.
   $permissions['delete any vih_short_course_sport_camp content'] = array(
     'name' => 'delete any vih_short_course_sport_camp content',
@@ -180,17 +149,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
   // Exported permission: 'delete own vih_short_course_family content'.
   $permissions['delete own vih_short_course_family content'] = array(
     'name' => 'delete own vih_short_course_family content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own vih_short_course_sommercamp content'.
-  $permissions['delete own vih_short_course_sommercamp content'] = array(
-    'name' => 'delete own vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
@@ -241,16 +199,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
-  // Exported permission: 'edit any commerce_product entity of bundle vih_short_course_sommercamp'.
-  $permissions['edit any commerce_product entity of bundle vih_short_course_sommercamp'] = array(
-    'name' => 'edit any commerce_product entity of bundle vih_short_course_sommercamp',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'commerce_product',
-  );
-
   // Exported permission: 'edit any commerce_product entity of bundle vih_short_course_sportcamp'.
   $permissions['edit any commerce_product entity of bundle vih_short_course_sportcamp'] = array(
     'name' => 'edit any commerce_product entity of bundle vih_short_course_sportcamp',
@@ -275,17 +223,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
   // Exported permission: 'edit any vih_short_course_family content'.
   $permissions['edit any vih_short_course_family content'] = array(
     'name' => 'edit any vih_short_course_family content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any vih_short_course_sommercamp content'.
-  $permissions['edit any vih_short_course_sommercamp content'] = array(
-    'name' => 'edit any vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
@@ -336,16 +273,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
     'module' => 'commerce_product',
   );
 
-  // Exported permission: 'edit own commerce_product entities of bundle vih_short_course_sommercamp'.
-  $permissions['edit own commerce_product entities of bundle vih_short_course_sommercamp'] = array(
-    'name' => 'edit own commerce_product entities of bundle vih_short_course_sommercamp',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'commerce_product',
-  );
-
   // Exported permission: 'edit own commerce_product entities of bundle vih_short_course_sportcamp'.
   $permissions['edit own commerce_product entities of bundle vih_short_course_sportcamp'] = array(
     'name' => 'edit own commerce_product entities of bundle vih_short_course_sportcamp',
@@ -370,17 +297,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
   // Exported permission: 'edit own vih_short_course_family content'.
   $permissions['edit own vih_short_course_family content'] = array(
     'name' => 'edit own vih_short_course_family content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-      'lærer' => 'lærer',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own vih_short_course_sommercamp content'.
-  $permissions['edit own vih_short_course_sommercamp content'] = array(
-    'name' => 'edit own vih_short_course_sommercamp content',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
@@ -433,16 +349,6 @@ function vih_short_course_commerce_defaultconfig_user_default_permissions() {
   // Exported permission: 'view any commerce_product entity of bundle vih_short_course_family'.
   $permissions['view any commerce_product entity of bundle vih_short_course_family'] = array(
     'name' => 'view any commerce_product entity of bundle vih_short_course_family',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'kontor' => 'kontor',
-    ),
-    'module' => 'commerce_product',
-  );
-
-  // Exported permission: 'view any commerce_product entity of bundle vih_short_course_sommercamp'.
-  $permissions['view any commerce_product entity of bundle vih_short_course_sommercamp'] = array(
-    'name' => 'view any commerce_product entity of bundle vih_short_course_sommercamp',
     'roles' => array(
       'administrator' => 'administrator',
       'kontor' => 'kontor',
