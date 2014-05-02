@@ -1,5 +1,0 @@
-Title,SKU,Price,Stock status,Stock quantity,Age group
-Family course,FAMILY-COURSE,4000.00,1,50,child5
-Family course sold out,FAMILY-COURSE-SOLDOUT,4000.00,1,0,child10
-Family course expired,FAMILY-COURSE-EXPIRED,4000.00,1,50,child
-Family course adult,FAMILY-COURSE-ADULT,4000.00,1,50,adult
