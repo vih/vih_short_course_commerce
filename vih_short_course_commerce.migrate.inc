@@ -119,7 +119,7 @@ class VIHShortCourseBasicNode extends VIHMigration {
     $this->addFieldMapping('field_picture:source_dir')
       ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
 
-    // Connect the products
+    // Connect the products.
     $this->addFieldMapping('field_golf_product', 'skus');
   }
 
@@ -132,7 +132,7 @@ class VIHShortCourseBasicNode extends VIHMigration {
   public function prepareRow($row) {
     $row->all_images = explode(',', $row->images);
     $products = array();
-    foreach(explode(', ', $row->sku) as $sku) {
+    foreach(explode(',', $row->sku) as $sku) {
       $product = commerce_product_load_by_sku($sku);
       $products[] = $product->product_id;
     }

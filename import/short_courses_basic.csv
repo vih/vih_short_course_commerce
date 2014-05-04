@@ -1,4 +1,6 @@
 Title,SKU,Price,Stock status,Stock quantity,Room
 Basic course,BASIC-COURSE,4000.00,1,50,single
+Basic course Single Room,BASIC-COURSE-SINGLE,2000.00,1,50,single
+Basic course Double Room,BASIC-COURSE-DOUBLE,4000.00,1,50,double
 Basic course sold out,BASIC-COURSE-SOLDOUT,4000.00,1,0,single
 Basic course expired,BASIC-COURSE-EXPIRED,4000.00,1,50,single
