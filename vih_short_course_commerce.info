@@ -52,7 +52,6 @@ features[defaultconfig][] = user_default_permissions:edit any commerce_product e
 features[defaultconfig][] = user_default_permissions:edit any short_course_basic content
 features[defaultconfig][] = user_default_permissions:edit own commerce_product entities of bundle vih_short_course_basic
 features[defaultconfig][] = user_default_permissions:edit own short_course_basic content
-features[defaultconfig][] = user_default_permissions:view any commerce_customer_profile entity of bundle billing
 features[defaultconfig][] = user_default_permissions:view any commerce_product entity of bundle vih_short_course_basic
 features[defaultconfig][] = user_default_permissions:view own commerce_product entities of bundle vih_short_course_basic
 features[features_api][] = api:2
