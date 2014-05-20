@@ -38,8 +38,7 @@ function vih_short_course_commerce_admin_paths() {
  */
 function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$form, &$form_state) {
 
-  // Make sure that one product display has been registered before starting on a registration for a new product display.
-  $entity = reset(entity_load($form_state['context']['entity_type'], array($form_state['context']['entity_id'])));
+  $entity = entity_load_single($form_state['context']['entity_type'], $form_state['context']['entity_id']);
 
   // Default values for the registration form.
   if (!module_exists('panels') || !panels_get_current_page_display()) {
