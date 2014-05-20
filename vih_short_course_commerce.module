@@ -48,7 +48,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   $form['submit']['#value'] = t('Sign up');
 
   // Checks whether event has been published
-  if ($entity->status == 0) {
+  if (!_vih_commerce_is_published($entity)) {
     $form['unpublished_event']['#markup'] = '<div class="info">' .
       t('This event has not been published. You can browse our website for other events.') . '</div>';
     unset($form['line_item_fields']);

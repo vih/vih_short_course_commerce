@@ -893,14 +893,14 @@ function vih_short_course_commerce_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'panopoly_image_spotlight',
         ),
         'type' => 'image',
-        'weight' => 11,
+        'weight' => 0,
       ),
       'featured' => array(
         'label' => 'above',
@@ -923,17 +923,13 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_featured_image',
-    'label' => 'Featured image',
+    'label' => 'Billede',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
+      'alt_field' => 0,
       'default_image' => 0,
-      'file_directory' => 'short_courses',
-      'file_extensions' => 'png jpg jpeg',
-      'focus' => 0,
-      'focus_lock_ratio' => 0,
-      'focus_min_size' => '',
-      'focus_required' => 0,
+      'file_directory' => 'shortcourses',
+      'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -945,7 +941,6 @@ function vih_short_course_commerce_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 'private',
           'public' => 'public',
           'vimeo' => 0,
           'youtube' => 0,
@@ -963,22 +958,26 @@ function vih_short_course_commerce_field_default_field_instances() {
           'upload' => 'upload',
           'youtube' => 0,
         ),
-        'manualcrop_crop_info' => TRUE,
-        'manualcrop_default_crop_area' => TRUE,
-        'manualcrop_enable' => FALSE,
-        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
         'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => TRUE,
-        'manualcrop_keyboard' => TRUE,
-        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
-        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_list' => array(
+          'panopoly_image_full' => 'panopoly_image_full',
+          'panopoly_image_spotlight' => 'panopoly_image_spotlight',
+          'thumbnail_tall' => 'thumbnail_tall',
+        ),
         'manualcrop_styles_mode' => 'include',
-        'manualcrop_thumblist' => FALSE,
+        'manualcrop_thumblist' => 0,
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -1054,100 +1053,6 @@ function vih_short_course_commerce_field_default_field_instances() {
       ),
       'type' => 'inline_entity_form',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-short_course_basic-field_featured_image'
-  $field_instances['node-short_course_basic-field_featured_image'] = array(
-    'bundle' => 'short_course_basic',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'sidepicture',
-        ),
-        'type' => 'image',
-        'weight' => 0,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_featured_image',
-    'label' => 'Billede',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'focus' => 0,
-      'focus_lock_ratio' => 0,
-      'focus_min_size' => '',
-      'focus_required' => 0,
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 'private',
-          'public' => 'public',
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'default' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'library' => 0,
-          'media_default--media_browser_1' => 0,
-          'media_internet' => 0,
-          'upload' => 0,
-        ),
-        'manualcrop_crop_info' => TRUE,
-        'manualcrop_default_crop_area' => TRUE,
-        'manualcrop_enable' => FALSE,
-        'manualcrop_inline_crop' => FALSE,
-        'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => TRUE,
-        'manualcrop_keyboard' => TRUE,
-        'manualcrop_maximize_default_crop_area' => FALSE,
-        'manualcrop_require_cropping' => array(),
-        'manualcrop_styles_list' => array(),
-        'manualcrop_styles_mode' => 'include',
-        'manualcrop_thumblist' => FALSE,
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 5,
     ),
   );
 
@@ -1375,7 +1280,6 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('CPR-nummer');
   t('Da kurset er støttet af staten, skal du opgive alle ti cifre i dit CPR-nummer.');
   t('Display path');
-  t('Featured image');
   t('Foredrag');
   t('Kursusleder');
   t('Kursustype');
