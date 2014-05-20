@@ -1057,8 +1057,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-short_course_basic-field_picture'
-  $field_instances['node-short_course_basic-field_picture'] = array(
+  // Exported field_instance: 'node-short_course_basic-field_featured_image'
+  $field_instances['node-short_course_basic-field_featured_image'] = array(
     'bundle' => 'short_course_basic',
     'deleted' => 0,
     'description' => '',
@@ -1093,7 +1093,7 @@ function vih_short_course_commerce_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_picture',
+    'field_name' => 'field_featured_image',
     'label' => 'Billede',
     'required' => 0,
     'settings' => array(

@@ -1,0 +1,108 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Replace field_picture with field_featured_image
+ */
+function vih_short_course_commerce_update_7000() {
+  $module = 'vih_short_course_commerce';
+  $bundle = 'short_course_basic';
+  $new_field_name = 'field_featured_image';
+  $old_field_name = 'field_picture';
+  // Make sure the field doesn't already exist.
+  if (!field_info_field($new_field_name)) {
+    watchdog($module, t('!field_name does not exist. You are not using Panopoly.', array('!field_name' => $new_field_name)));
+    // Exit. It should exist in Panopoly.
+    return;
+  }
+
+  // Create the instance.
+  $inst = field_info_instance('node', $new_field_name, $bundle);
+  if (!$inst) {
+    $instance = array(
+      'field_name' => $new_field_name,
+      'entity_type' => 'node',
+      'bundle' => $bundle,
+      'label' => 'Featured image',
+      'description' => '',
+      'required' => FALSE,
+      'settings' => array(
+            'alt_field' => 0,
+            'default_image' => 0,
+            'file_directory' => 'employees',
+            'file_extensions' => 'png jpg jpeg',
+            'max_filesize' => '',
+            'max_resolution' => '',
+            'min_resolution' => '400x600',
+            'title_field' => 0,
+            'user_register_form' => FALSE,
+          ),
+          'widget' => array(
+            'active' => 1,
+            'module' => 'media',
+            'settings' => array(
+              'allowed_schemes' => array(
+                'public' => 'public',
+                'vimeo' => 0,
+                'youtube' => 0,
+              ),
+              'allowed_types' => array(
+                'audio' => 0,
+                'document' => 0,
+                'image' => 'image',
+                'video' => 0,
+              ),
+              'browser_plugins' => array(
+                'media_default--media_browser_1' => 'media_default--media_browser_1',
+                'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+                'media_internet' => 0,
+                'upload' => 'upload',
+                'youtube' => 0,
+              ),
+              'manualcrop_crop_info' => 1,
+              'manualcrop_default_crop_area' => 1,
+              'manualcrop_enable' => 1,
+              'manualcrop_inline_crop' => 0,
+              'manualcrop_instant_crop' => FALSE,
+              'manualcrop_instant_preview' => 1,
+              'manualcrop_keyboard' => 1,
+              'manualcrop_maximize_default_crop_area' => 0,
+              'manualcrop_require_cropping' => array(
+                'sidepicture' => 'sidepicture',
+                'thumbnail_tall_employee' => 'thumbnail_tall_employee',
+              ),
+              'manualcrop_styles_list' => array(
+                'sidepicture' => 'sidepicture',
+                'thumbnail_tall_employee' => 'thumbnail_tall_employee',
+              ),
+              'manualcrop_styles_mode' => 'include',
+              'manualcrop_thumblist' => 1,
+              'progress_indicator' => 'throbber',
+            ),
+            'type' => 'media_generic',
+            'weight' => 4,
+          ),
+
+    );
+    field_create_instance($instance);
+    watchdog($module, t('!field_name was added successfully to !bundle', array('!field_name' => $new_field_name, '!bundle' => $bundle)));
+  }
+
+  $nodes = node_load_multiple(null, array('type' => $bundle));
+  foreach ($nodes as $nx => $no) {
+    if (!empty($no->{$old_field_name})) {
+      $no->field_featured_image = $no->{$old_field_name};
+      node_save($no);
+      $file = file_load($no->field_featured_image[LANGUAGE_NONE][0]['fid']);
+      if ($file) {
+        file_usage_add($file, $module, $bundle, $no->nid);
+      }
+    }
+  }
+  $inst = field_info_instance('node', $old_field_name, $bundle);
+  if ($inst) {
+    field_delete_instance($inst, false);
+  }
+}

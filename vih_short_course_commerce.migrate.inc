@@ -112,13 +112,6 @@ class VIHShortCourseBasicNode extends VIHMigration {
     $this->addFieldMapping('field_featured_image:source_dir')
       ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
 
-    // Featured image
-    $this->addFieldMapping('field_picture', 'featured_image');
-    $this->addFieldMapping('field_picture:file_replace')
-      ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_picture:source_dir')
-      ->defaultValue(drupal_get_path('module', 'vih_short_course_commerce') . '/import/images');
-
     // Connect the products.
     $this->addFieldMapping('field_golf_product', 'skus');
   }
