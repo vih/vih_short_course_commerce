@@ -93,9 +93,10 @@ function vih_short_course_commerce_update_7000() {
   $nodes = node_load_multiple(null, array('type' => $bundle));
   foreach ($nodes as $nx => $no) {
     if (!empty($no->{$old_field_name})) {
-      $no->field_featured_image = $no->{$old_field_name};
-      node_save($no);
-      $file = file_load($no->field_featured_image[LANGUAGE_NONE][0]['fid']);
+      $wrapper = entity_metadata_wrapper('node', $no);
+      $file = file_load($wrapper->{$old_field_name}->file->fid);
+      $wrapper->{$new_field_name}->file = $file;
+      $wrapper->save();
       if ($file) {
         file_usage_add($file, $module, 'node', $no->nid);
       }
