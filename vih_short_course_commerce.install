@@ -97,7 +97,7 @@ function vih_short_course_commerce_update_7000() {
       node_save($no);
       $file = file_load($no->field_featured_image[LANGUAGE_NONE][0]['fid']);
       if ($file) {
-        file_usage_add($file, $module, $bundle, $no->nid);
+        file_usage_add($file, $module, 'node', $no->nid);
       }
     }
   }
