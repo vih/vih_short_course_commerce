@@ -6,7 +6,7 @@
 /**
  * Replace field_picture with field_featured_image
  */
-function vih_short_course_commerce_update_7000() {
+function vih_short_course_commerce_update_7001() {
   $module = 'vih_short_course_commerce';
   $bundle = 'short_course_basic';
   $new_field_name = 'field_featured_image';
@@ -94,7 +94,7 @@ function vih_short_course_commerce_update_7000() {
   foreach ($nodes as $nx => $no) {
     if (!empty($no->{$old_field_name})) {
       $wrapper = entity_metadata_wrapper('node', $no);
-      $file = file_load($wrapper->{$old_field_name}->file->fid);
+      $file = file_load($wrapper->{$old_field_name}->file->fid->value());
       $wrapper->{$new_field_name}->file = $file;
       $wrapper->save();
       if ($file) {
