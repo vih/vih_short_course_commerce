@@ -200,6 +200,9 @@ function vih_short_course_commerce_field_default_field_bases() {
         'single' => 'Enkeltværelse - hvor to enkeltværelser deler bad og toilet i fælles forgang',
         'double' => 'Dobbeltværelse - to indkvarteres på dobbeltværelse med bad og toilet',
         'triple' => 'Tremandsværelse - tre indkvarteres på et dobbeltværelse med bad og toilet',
+        'single-nobath' => 'Enkeltværelse - med bad og toilet på gangen',
+        'double-nobath' => 'Dobbeltværelse - med bad og toilet på gangen',
+        'triple-nobath' => 'Tremandsværelse - med bad og toilet på gangen',
       ),
       'allowed_values_function' => '',
     ),
@@ -243,7 +246,14 @@ function vih_short_course_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_course_lecture',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
