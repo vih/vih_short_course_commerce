@@ -152,3 +152,56 @@ function vih_short_course_commerce_add_to_cart_form_submit_before($form, &$form_
     // Add some logic to ensure that the cart will not be filled up with rented kayaks.
   }
 }
+
+
+/**
+ * Clone module integration.
+ *
+ * $node = node_load(29);
+ * vih_short_course_commerce_clone_node_alter($node, array('original_node' => $node));
+ */
+function vih_short_course_commerce_clone_node_alter(&$node, $context) {
+  // Setup variables
+  $product_reference_field = NULL;
+  $type = $context['original_node']->type;
+  $types = commerce_product_reference_node_types();
+
+  // Check if we're cloning a content type with a product reference field.
+  if (isset($types[$type])) {
+    // Load the bundle field instances
+    $field_instances = field_info_instances('node', $context['original_node']->type);
+    foreach ($field_instances as $field_name => $config) {
+      // Get the field instances field info, see if it is a product reference
+      $field_info = field_info_field($field_name);
+      if ($field_info['type'] == 'commerce_product_reference') {
+        $product_reference_field = $field_name;
+        break;
+      }
+    }
+  }
+  // If we didn't find the field, back out.
+  if (!$product_reference_field) {
+    return NULL;
+  }
+
+  $wrapper = entity_metadata_wrapper('node', $node);
+  // Loop through the products of the node, create new.
+  foreach ($wrapper->$product_reference_field as $delta => $product_wrapper) {
+    // Create an empty Commerce Product entity, based on existing.
+    $cloned_product = commerce_product_new($product_wrapper->getBundle());
+    $cloned_product = array_merge((array) $cloned_product, (array) $product_wrapper->value());
+    $cloned_product =(object) $cloned_product;
+
+    // Reset some values.
+    $cloned_product->product_id = NULL;
+    $cloned_product->revision_id = NULL;
+
+    // Randomize SKU
+    $cloned_product->sku .= mt_rand(1, 9999999);
+    $cloned_product_wrapper = entity_metadata_wrapper('commerce_product', $cloned_product);
+    $cloned_product_wrapper->save();
+
+    // Update reference
+    $wrapper->$product_reference_field->offsetSet($delta, $cloned_product_wrapper->value());
+  }
+}
