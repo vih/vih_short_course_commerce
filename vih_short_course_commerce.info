@@ -5,6 +5,7 @@ package = VIH
 version = 7.x-0.4
 project = vih_short_course_commerce
 dependencies[] = addressfield
+dependencies[] = commerce_autosku
 dependencies[] = commerce_cart
 dependencies[] = commerce_custom_product
 dependencies[] = commerce_customer_ui

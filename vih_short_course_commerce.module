@@ -197,11 +197,39 @@ function vih_short_course_commerce_clone_node_alter(&$node, $context) {
     $cloned_product->revision_id = NULL;
 
     // Randomize SKU
-    $cloned_product->sku .= mt_rand(1, 9999999);
     $cloned_product_wrapper = entity_metadata_wrapper('commerce_product', $cloned_product);
     $cloned_product_wrapper->save();
 
     // Update reference
     $wrapper->$product_reference_field->offsetSet($delta, $cloned_product_wrapper->value());
+  }
+}
+
+/**
+ * Implements hook_commerce_product_type_info_alter().
+ *
+ * AutoSKU cannot be exported, but we can define patterns here.
+ */
+function vih_short_course_commerce_commerce_product_type_info_alter(&$product_types) {
+  foreach ($product_types as $name => &$type) {
+    // Only affect desired types.
+    if (strpos($name, 'vih_short_') === FALSE && $name != 'vih_shourt_course_golf') {
+      continue;
+    }
+    // Do not alter product types which have been configured through the UI.
+    if ($type['autosku'] !== FALSE) {
+      continue;
+    }
+
+    // Define the AutoSKU
+    $product_types[$name]['autosku'] = array(
+      'product_type' => $name,
+      'pattern' => '[commerce-product:type]-[commerce-product:product-id]',
+      'advanced' => array(
+        'update_existing' => FALSE,
+        'hide_sku' => FALSE,
+        'case' => 0,
+      )
+    );
   }
 }
