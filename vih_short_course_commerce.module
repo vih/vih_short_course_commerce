@@ -209,7 +209,7 @@ function vih_short_course_commerce_commerce_product_type_info_alter(&$product_ty
       continue;
     }
     // Do not alter product types which have been configured through the UI.
-    if ($type['autosku'] !== FALSE) {
+    if (isset($type['autosku']) && $type['autosku'] !== FALSE) {
       continue;
     }
 
