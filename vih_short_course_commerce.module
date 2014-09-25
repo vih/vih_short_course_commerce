@@ -126,7 +126,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
 
   // Add read only price field to add to cart form.
   if (isset($form_state['default_product']->commerce_price)){
-    $form['display_price'] = field_view_field('commerce_product', $form_state['default_product'], 'commerce_price');
+    $form['display_price'] = field_view_field('commerce_product', $form_state['default_product'], 'commerce_price', 'default', NULL);
   }
   array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
 }
