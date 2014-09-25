@@ -431,9 +431,18 @@ function vih_short_course_commerce_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'commerce_price_savings_formatter',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+          'prices' => array(
+            0 => 'list',
+            1 => 'price',
+          ),
+          'savings' => 'percentage',
+          'show_labels' => FALSE,
+        ),
+        'type' => 'commerce_price_savings_formatter_inline',
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -561,7 +570,7 @@ function vih_short_course_commerce_field_default_field_instances() {
           'thousand_separator' => ' ',
         ),
         'type' => 'number_integer',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',
@@ -623,7 +632,7 @@ function vih_short_course_commerce_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'ical' => array(
         'label' => 'above',

@@ -11,6 +11,7 @@ dependencies[] = commerce_custom_product
 dependencies[] = commerce_customer_ui
 dependencies[] = commerce_features
 dependencies[] = commerce_price
+dependencies[] = commerce_price_savings_formatter
 dependencies[] = commerce_product_reference
 dependencies[] = commerce_product_ui
 dependencies[] = commerce_stock
