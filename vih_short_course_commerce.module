@@ -126,14 +126,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
 
   // Add read only price field to add to cart form.
   if (isset($form_state['default_product']->commerce_price)){
-    $price = commerce_product_calculate_sell_price($form_state['default_product']);
-    $form['display_price'] = array(
-      '#title' => t('Price'),
-      '#type' => 'item',
-      '#markup' => '<span class="display-price-amount">' . commerce_currency_format($price['amount'], $price['currency_code']) . '</span>',
-      '#prefix' => '<div class="display-price">',
-      '#suffix' => '</div>',
-    );
+    $form['display_price'] = field_view_field('commerce_product', $form_state['default_product'], 'commerce_price');
   }
   array_unshift($form['#submit'], 'vih_short_course_commerce_add_to_cart_form_submit_before');
 }
