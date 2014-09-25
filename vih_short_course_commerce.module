@@ -28,7 +28,7 @@ function vih_short_course_commerce_admin_paths() {
   $paths = array(
     'node/*/registrations' => TRUE,
     'node/*/registrations/*' => TRUE,
-    'node/*/email' => TRUE,    
+    'node/*/email' => TRUE,
   );
   return $paths;
 }
@@ -95,7 +95,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
       $form['pending_order_msg']['#weight'] = -99;
     }
   }
-  
+
   // Add prices to attribute selectors.
   if (isset($form['attributes'])) {
     foreach (element_children($form['attributes']) as $field) {
@@ -110,8 +110,8 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
         $form['attributes'][$field]['#options'][$attribute] = $label . ' (' . $price . ')';
       }
     }
-  }  
-  
+  }
+
   // Adding table with current people in the order.
   global $user;
   $order = commerce_cart_order_load($user->uid);
@@ -122,7 +122,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $view->hide_admin_links = TRUE;
     $form['current_order']['#markup'] = $view->preview();
     $form['current_order']['#weight'] = -99;
-  }  
+  }
 
   // Add read only price field to add to cart form.
   if (isset($form_state['default_product']->commerce_price)){
@@ -152,7 +152,6 @@ function vih_short_course_commerce_add_to_cart_form_submit_before($form, &$form_
     // Add some logic to ensure that the cart will not be filled up with rented kayaks.
   }
 }
-
 
 /**
  * Clone module integration.
