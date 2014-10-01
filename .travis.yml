@@ -6,7 +6,7 @@ before_script:
   - wget http://ftp.drupal.org/files/projects/drupalcs-7.x-1.0-beta1.tar.gz -O ../drupalcs.tar.gz
   - tar -xvzf ../drupalcs.tar.gz -C ../
   - phpenv rehash
-script: 
+script:
   - phpcs . --standard=../drupalcs/Drupal/ruleset.xml --extensions=php,module,inc,install,test,profile,theme
 
 
