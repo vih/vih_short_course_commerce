@@ -65,16 +65,28 @@ function vih_short_course_commerce_strongarm() {
             'weight' => '11',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
         ),
         'product:title' => array(
           'default' => array(
             'weight' => '12',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
         ),
         'product:commerce_price' => array(
           'default' => array(
             'weight' => '6',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '4',
             'visible' => FALSE,
           ),
         ),
@@ -89,6 +101,10 @@ function vih_short_course_commerce_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
         ),
         'product:field_agegroup' => array(
           'default' => array(
@@ -101,11 +117,19 @@ function vih_short_course_commerce_strongarm() {
             'weight' => '8',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
         ),
         'product:commerce_stock' => array(
           'default' => array(
             'weight' => '7',
             'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => FALSE,
           ),
         ),
       ),

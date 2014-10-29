@@ -246,6 +246,7 @@ function vih_short_course_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_course_lecture',
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
