@@ -197,8 +197,8 @@ function vih_short_course_commerce_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'none' => 'Ingen overnatning',
-        'single' => 'Enkeltværelse - to enkeltværelser deler bad og toilet i fælles forgang',
-        'double' => 'Dobbeltværelse - to bor på dobbeltværelse med bad og toilet',
+        'single' => 'Enkeltværelse - to værelser deler bad og toilet i fælles forgang',
+        'double' => 'Dobbeltværelse - to bor på værelse med bad og toilet',
         'triple' => 'Tremandsværelse - tre bor på et dobbeltværelse med bad og toilet',
         'single-nobath' => 'Enkeltværelse - med bad og toilet på gangen',
         'double-nobath' => 'Dobbeltværelse - med bad og toilet på gangen',
