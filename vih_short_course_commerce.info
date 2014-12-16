@@ -72,6 +72,7 @@ features[field_instance][] = commerce_line_item-vih_short_course-commerce_total
 features[field_instance][] = commerce_line_item-vih_short_course-commerce_unit_price
 features[field_instance][] = commerce_line_item-vih_short_course-field_cpr_nummer
 features[field_instance][] = commerce_line_item-vih_short_course-field_registrant_name
+features[field_instance][] = commerce_line_item-vih_short_course-field_roommate
 features[field_instance][] = commerce_product-vih_short_course_basic-commerce_price
 features[field_instance][] = commerce_product-vih_short_course_basic-commerce_stock
 features[field_instance][] = commerce_product-vih_short_course_basic-field_room

@@ -407,6 +407,48 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_line_item-vih_short_course-field_roommate'
+  $field_instances['commerce_line_item-vih_short_course-field_roommate'] = array(
+    'bundle' => 'vih_short_course',
+    'commerce_cart_settings' => array(
+      'field_access' => 1,
+    ),
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'field_roommate',
+    'label' => 'Sambo',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'commerce_product-vih_short_course_basic-commerce_price'
   $field_instances['commerce_product-vih_short_course_basic-commerce_price'] = array(
     'bundle' => 'vih_short_course_basic',
@@ -1312,6 +1354,7 @@ function vih_short_course_commerce_field_default_field_instances() {
   t('Price');
   t('Product');
   t('Produkt');
+  t('Sambo');
   t('Skema');
   t('Tidspunkt');
   t('Total');
