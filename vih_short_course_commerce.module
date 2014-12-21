@@ -101,10 +101,12 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     foreach (element_children($form['attributes']) as $field) {
       foreach (field_get_items($form_state['context']['entity_type'], $entity, 'field_golf_product') as $product) {
         $product = commerce_product_load($product['product_id']);
-        $attribute = reset(field_get_items('commerce_product', $product, $field));
+        $attribute = field_get_items('commerce_product', $product, $field);
+        $attribute = reset($attribute);
         $label = $attribute['label'];
         $attribute = $attribute['value'];
-        $item = reset(field_get_items('commerce_product', $product, 'commerce_price'));
+        $item = field_get_items('commerce_product', $product, 'commerce_price');
+        $item = reset($item);
         $price = commerce_currency_format($item['amount'], $item['currency_code'], $product);
         $label = $form['attributes'][$field]['#options'][$attribute];
         $form['attributes'][$field]['#options'][$attribute] = $label . ' (' . $price . ')';
