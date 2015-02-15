@@ -178,9 +178,13 @@ function vih_short_course_commerce_clone_node_alter(&$node, $context) {
     return NULL;
   }
 
+  /** @var EntityDrupalWrapper $wrapper */
   $wrapper = entity_metadata_wrapper('node', $node);
-  // Loop through the products of the node, create new.
-  foreach ($wrapper->$product_reference_field as $delta => $product_wrapper) {
+  /** @var EntityListWrapper|EntityDrupalWrapper $product_references */
+  $product_references = $wrapper->get($product_reference_field);
+  // This is a single field instance.
+  if ($product_references instanceof EntityDrupalWrapper) {
+    $product_wrapper = $product_references;
     // Create an empty Commerce Product entity, based on existing.
     $cloned_product = commerce_product_new($product_wrapper->getBundle());
     $cloned_product = array_merge((array) $cloned_product, (array) $product_wrapper->value());
@@ -189,13 +193,37 @@ function vih_short_course_commerce_clone_node_alter(&$node, $context) {
     // Reset some values.
     $cloned_product->product_id = NULL;
     $cloned_product->revision_id = NULL;
+    $cloned_product->sku = _commerce_autosku_get_temporary_sku();
 
     // Randomize SKU
+    /** @var EntityDrupalWrapper $cloned_product_wrapper */
     $cloned_product_wrapper = entity_metadata_wrapper('commerce_product', $cloned_product);
     $cloned_product_wrapper->save();
 
-    // Update reference
-    $wrapper->$product_reference_field->offsetSet($delta, $cloned_product_wrapper->value());
+    $product_references->set($cloned_product_wrapper->value());
+  }
+  else {
+    // Loop through the products of the node, create new.
+    /** @var EntityDrupalWrapper $product_wrapper */
+    foreach ($product_references as $delta => $product_wrapper) {
+      // Create an empty Commerce Product entity, based on existing.
+      $cloned_product = commerce_product_new($product_wrapper->getBundle());
+      $cloned_product = array_merge((array) $cloned_product, (array) $product_wrapper->value());
+      $cloned_product =(object) $cloned_product;
+
+      // Reset some values.
+      $cloned_product->product_id = NULL;
+      $cloned_product->revision_id = NULL;
+      $cloned_product->sku = _commerce_autosku_get_temporary_sku();
+
+      // Randomize SKU
+      /** @var EntityDrupalWrapper $cloned_product_wrapper */
+      $cloned_product_wrapper = entity_metadata_wrapper('commerce_product', $cloned_product);
+      $cloned_product_wrapper->save();
+
+      // Update reference
+      $product_references->offsetSet($delta, $cloned_product_wrapper->value());
+    }
   }
 }
 
