@@ -10,7 +10,8 @@
 function vih_short_course_commerce_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-commerce_display_path'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-commerce_display_path'
   $field_instances['commerce_line_item-vih_short_course-commerce_display_path'] = array(
     'bundle' => 'vih_short_course',
     'default_value' => NULL,
@@ -56,7 +57,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-commerce_product'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-commerce_product'
   $field_instances['commerce_line_item-vih_short_course-commerce_product'] = array(
     'bundle' => 'vih_short_course',
     'default_value' => NULL,
@@ -117,7 +119,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-commerce_total'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-commerce_total'
   $field_instances['commerce_line_item-vih_short_course-commerce_total'] = array(
     'bundle' => 'vih_short_course',
     'default_value' => NULL,
@@ -187,7 +190,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-commerce_unit_price'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-commerce_unit_price'
   $field_instances['commerce_line_item-vih_short_course-commerce_unit_price'] = array(
     'bundle' => 'vih_short_course',
     'default_value' => NULL,
@@ -257,7 +261,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-field_cpr_nummer'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-field_cpr_nummer'
   $field_instances['commerce_line_item-vih_short_course-field_cpr_nummer'] = array(
     'bundle' => 'vih_short_course',
     'commerce_cart_settings' => array(
@@ -342,7 +347,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-field_registrant_name'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-field_registrant_name'
   $field_instances['commerce_line_item-vih_short_course-field_registrant_name'] = array(
     'bundle' => 'vih_short_course',
     'commerce_cart_settings' => array(
@@ -407,7 +413,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_line_item-vih_short_course-field_roommate'
+  // Exported field_instance:
+  // 'commerce_line_item-vih_short_course-field_roommate'
   $field_instances['commerce_line_item-vih_short_course-field_roommate'] = array(
     'bundle' => 'vih_short_course',
     'commerce_cart_settings' => array(
@@ -449,7 +456,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-vih_short_course_basic-commerce_price'
+  // Exported field_instance:
+  // 'commerce_product-vih_short_course_basic-commerce_price'
   $field_instances['commerce_product-vih_short_course_basic-commerce_price'] = array(
     'bundle' => 'vih_short_course_basic',
     'default_value' => NULL,
@@ -585,7 +593,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-vih_short_course_basic-commerce_stock'
+  // Exported field_instance:
+  // 'commerce_product-vih_short_course_basic-commerce_stock'
   $field_instances['commerce_product-vih_short_course_basic-commerce_stock'] = array(
     'bundle' => 'vih_short_course_basic',
     'default_value' => array(
@@ -652,7 +661,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_product-vih_short_course_basic-field_room'
+  // Exported field_instance:
+  // 'commerce_product-vih_short_course_basic-field_room'
   $field_instances['commerce_product-vih_short_course_basic-field_room'] = array(
     'bundle' => 'vih_short_course_basic',
     'commerce_cart_settings' => array(
@@ -843,6 +853,7 @@ function vih_short_course_commerce_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -868,6 +879,7 @@ function vih_short_course_commerce_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1217,7 +1229,8 @@ function vih_short_course_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-short_course_basic-field_short_course_lecture'
+  // Exported field_instance:
+  // 'node-short_course_basic-field_short_course_lecture'
   $field_instances['node-short_course_basic-field_short_course_lecture'] = array(
     'bundle' => 'short_course_basic',
     'default_value' => NULL,
