@@ -60,7 +60,6 @@ features[features_api][] = api:2
 features[field_base][] = field_agegroup
 features[field_base][] = field_country_of_origin
 features[field_base][] = field_cpr_nummer
-features[field_base][] = field_dgu_medlemsnummer
 features[field_base][] = field_golf_product
 features[field_base][] = field_registrant_name
 features[field_base][] = field_room
