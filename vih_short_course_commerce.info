@@ -1,5 +1,5 @@
 name = VIH Short Course Commerce
-description = Adds short course integration with commerce
+description = Handles basic short course integration with commerce including basic short course WITHOUT extra options.
 core = 7.x
 package = VIH
 version = 7.x-0.4
