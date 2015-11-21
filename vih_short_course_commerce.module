@@ -60,7 +60,7 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
     $form['pending_order_msg']['#markup'] = '<div class="info">' .
       t('You have already started a registration. Please finish that registration before proceding.') . ' <br />' .
       l(t('Go to your current registration'), 'cart', array('attributes' => array('class' => 'btn btn-success'))) .
-      '.</div>';
+      '</div>';
     $form['pending_order_msg']['#weight'] = -99;
     $form['submit']['#value'] = t('Cannot sign up - please finish your other registration');
     $form['submit']['#disabled'] = TRUE;
