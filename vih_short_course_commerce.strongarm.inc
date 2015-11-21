@@ -165,6 +165,7 @@ function vih_short_course_commerce_strongarm() {
   $strongarm->value = array(
     0 => 'status',
     1 => 'promote',
+    2 => 'revision',
   );
   $export['node_options_short_course_basic'] = $strongarm;
 
