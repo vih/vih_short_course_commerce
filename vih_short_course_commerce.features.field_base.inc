@@ -26,10 +26,10 @@ function vih_short_course_commerce_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'child5' => 'Barn (5 til 18 år)',
-        'child10' => 'Barn (10 til 18 år)',
-        'child' => 'Barn (under 18 år)',
-        'adult' => 'Voksen (over 18 år)',
+        'child5' => 'Barn (5 til 17½ år)',
+        'child10' => 'Barn (10 til 17½ år)',
+        'child' => 'Barn (under 17½ år)',
+        'adult' => 'Voksen (over 17½ år)',
       ),
       'allowed_values_function' => '',
     ),
