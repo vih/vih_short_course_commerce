@@ -77,8 +77,8 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
   // Checks whether a registration is in process on the current course.
   elseif (_vih_commerce_registration_in_progress_on_current_course($entity)) {
     $form['pending_order_msg']['#markup'] = '<div class="info">' .
-        t('You already added some people. Add more or ') . 
-        l(t('go to checkout'), 'checkout') . 
+        t('You already added some people. Add more or ') .
+        l(t('go to checkout'), 'checkout') .
         '.</div>';
     $form['pending_order_msg']['#weight'] = -99;
   }
@@ -103,7 +103,6 @@ function vih_short_course_commerce_form_commerce_cart_add_to_cart_form_alter(&$f
         $product = commerce_product_load($product['product_id']);
         $attribute = field_get_items('commerce_product', $product, $field);
         $attribute = reset($attribute);
-        $label = $attribute['label'];
         $attribute = $attribute['value'];
         $item = field_get_items('commerce_product', $product, 'commerce_price');
         $item = reset($item);
